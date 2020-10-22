@@ -1,0 +1,42 @@
+<html>
+<head>
+<style type="text/css">
+@font-face {
+  font-family: "Iceland";
+  src: url("../archivos/fuentes/iceland.ttf") format("truetype");
+}
+@font-face {
+  font-family: "gruppo";
+  src: url("../archivos/fuentes/gruppo.ttf") format("truetype");
+}
+:root{
+--colorsec: rgba(175,255,250,1);
+} 
+body {
+  background-color: transparent;
+  text-align: center;
+  cursor: none;
+}
+  #eventin { 
+    position: relative;
+    font-family: 'gruppo';
+    font-weight: bold;
+    font-size: 20vh;
+	vertical-align: center;
+    color: rgba(255,255,255,1);
+	top: calc(50% - 25vh);
+}
+  #fechaeventin {
+    position: relative;
+    font-family: 'Iceland';
+    font-size: 12vh;
+    color: var(--colorsec);
+    vertical-align: center;
+top: calc(50% - 17vh);
+}
+</style>
+</head>
+<body>
+<div id="eventin">Titulo</div><div id="fechaeventin">Fecha</div>
+</body>
+</html>

@@ -1,0 +1,462 @@
+<html>
+<head>
+<title>Noticias</title>
+<style type="text/css">
+:root{
+--tematitulo: rgba(255,255,255,1);
+--fondotitular: rgba(200,200,200,0.1);
+--bordetitular: none;
+--sombratitular: 0px 0px 10px 3px rgba(180,180,180,0);
+--fondodesc: rgba(200,200,200,0.1);
+--bordedesc: none;
+--sombradesc: inset 0px 0px 15px 4px rgba(0,0,0,0);
+--temahora: rgba(175,255,250,1);
+--tematexto: rgba(255,255,255,1);
+--sombra: 3px 3px 15px -4px rgba(180,180,180,0.6);
+}
+
+a{display: none;} 
+
+body {
+  background-color: transparent;
+  cursor: none;
+}
+
+@font-face {
+  font-family: "Iceland";
+  src: url("../archivos/fuentes/iceland.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Manuale";
+  src: url("../archivos/fuentes/manuale.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../archivos/fuentes/roboto.ttf") format("truetype");
+}
+
+@keyframes fadein {
+  0% {
+      opacity: 1;
+  }
+  9.9% {
+      opacity: 1;
+  }
+    10.1% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 0;
+  }
+}
+
+.ambos {
+ height: 100px;
+ width: 97%;
+ overflow:hidden;
+ position: absolute;
+ background: var(--fondotitular);
+ border: var(--bordetitular);
+ box-shadow: var(--sombratitular);
+ border-radius: 3px;
+}
+
+.imagen {
+  margin-top: 15px;
+  margin-left: 15px;
+  width: 70px;
+  height: 70px;
+  float: left;
+  padding-right: 10px;
+}
+
+.tit {
+font-size: 3.7vh;
+line-height: 6vh;
+font-family: "Roboto";
+color: var(--tematitulo);
+text-align: justify;
+position: absolute;
+top: 50%;
+transform: translate(0%, -50%);
+margin-left: 110px;
+width: calc(100% - 125px);
+overflow:hidden;
+}
+
+.ambos2 {
+ width: 97%;
+  height: auto;
+  position: absolute;
+  margin-top: calc(100px + 3%);
+  margin-left: 0px;
+  background: var(--fondodesc);
+  border: var(--bordedesc);
+  box-shadow: var(--sombradesc);
+  border-radius: 3px;
+
+}
+
+.descripcion {
+  width: 90%;
+  height: auto;
+  font-family: "Manuale";
+  line-height: 6.5vh;
+  color: var(--tematexto);
+  font-size: 3.5vh;
+  text-align: justify;
+  padding: 5% 5% 2.5% 5%;
+}
+
+.tiemp {
+text-align: right;
+font-size: 3.5vh;
+line-height: 6.5vh;
+width: 90%;
+font-family: "Iceland";
+color: var(--temahora);
+padding: 2.5% 5% 5% 5%;
+}
+
+.noticia {
+  animation: fadein 200s linear infinite;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
+
+.noticia2 {
+  opacity: 0;
+  animation: fadein 200s linear infinite;
+  animation-delay: 20s;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+
+}
+
+.noticia3 {
+  opacity: 0;
+  animation: fadein 200s linear infinite;
+  animation-delay: 40s;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+
+}
+
+.noticia4 {
+  opacity: 0;
+  animation: fadein 200s linear infinite;
+  animation-delay: 60s;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+
+}
+
+.noticia5 {
+  opacity: 0;
+  animation: fadein 200s linear infinite;
+  animation-delay: 80s;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+
+}
+
+.noticia6 {
+  opacity: 0;
+  animation: fadein 200s linear infinite;
+  animation-delay: 100s;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+
+}
+
+.noticia7 {
+  opacity: 0;
+  animation: fadein 200s linear infinite;
+  animation-delay: 120s;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+
+}
+
+.noticia8 {
+  opacity: 0;
+  animation: fadein 200s linear infinite;
+  animation-delay: 140s;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+
+}
+
+.noticia9 {
+  opacity: 0;
+  animation: fadein 200s linear infinite;
+  animation-delay: 160s;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+
+}
+
+.noticia10 {
+  opacity: 0;
+  animation: fadein 200s linear infinite;
+  animation-delay: 180s;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+
+}
+</style>
+</head>
+<body>
+  
+<div class="noticia">
+
+<div class="ambos">
+<div class="imagen">
+<img width="100%" height="100%" src="../archivos/iconos/europapresslogo.png" style="border: solid 1px var(--temahora); box-shadow: var(--sombra); opacity: 0.85; border-radius: 3px;"></img>
+</div>
+<div class="tit">
+Tenso duelo entre Abascal y Sánchez con calificativos de "mentiroso", "depredador sin valores" y "falso patriota"
+</div>
+</div>
+
+<div class="ambos2">
+<div id="contenedornot"><div id="efectonot"></div><div id="efectonot2"></div></div>
+<div class="descripcion">
+La moción de censura, en imágenes
+</div>
+<div class="tiemp">
+Miercoles, 21 Oct 2020. 15:08:53h.
+</div>
+</div>
+
+</div>
+
+<div class="noticia2">
+
+<div class="ambos">
+<div class="imagen">
+<img width="100%" height="100%" src="../archivos/iconos/europapresslogo.png" style="border: solid 1px var(--temahora); box-shadow: var(--sombra); opacity: 0.85; border-radius: 3px;"></img>
+</div>
+<div class="tit">
+Fin de la primera jornada de la moción de censura de Abascal tras más de 11 horas de debate
+</div>
+</div>
+
+<div class="ambos2">
+<div id="contenedornot"><div id="efectonot"></div><div id="efectonot2"></div></div>
+<div class="descripcion">
+La primera jornada de la moción de censura encabezada por el líder del Vox, Santiago Abascal, contra Pedro Sánchez ha finalizado poco antes de las nueve de la noche de este miércoles, después de más de onmce horas de debates.
+</div>
+<div class="tiemp">
+Miercoles, 21 Oct 2020. 18:58:57h.
+</div>
+</div>
+
+</div>
+
+<div class="noticia3">
+
+<div class="ambos">
+<div class="imagen">
+<img width="100%" height="100%" src="../archivos/iconos/europapresslogo.png" style="border: solid 1px var(--temahora); box-shadow: var(--sombra); opacity: 0.85; border-radius: 3px;"></img>
+</div>
+<div class="tit">
+Así te hemos contado en directo el primer día de la moción de censura de Vox
+</div>
+</div>
+
+<div class="ambos2">
+<div id="contenedornot"><div id="efectonot"></div><div id="efectonot2"></div></div>
+<div class="descripcion">
+El presidente de Vox, Santiago Abascal, ha pedido este miércoles apoyo al Congreso para convertirse en presidente del Gobierno y poder convocar elecciones por que, según ha dicho, "a los españoles se les ha acabado la paciencia" y hay que "devolverles la palabra" para que puedan juzgar los "meses de caos y ruina" a los que ha llevado al país el Ejecutivo de Pedro Sánchez.
+</div>
+<div class="tiemp">
+Miercoles, 21 Oct 2020. 05:59:31h.
+</div>
+</div>
+
+</div>
+
+<div class="noticia4">
+
+<div class="ambos">
+<div class="imagen">
+<img width="100%" height="100%" src="../archivos/iconos/europapresslogo.png" style="border: solid 1px var(--temahora); box-shadow: var(--sombra); opacity: 0.85; border-radius: 3px;"></img>
+</div>
+<div class="tit">
+El PP no concreta su voto en la moción pero arremete contra la iniciativa "inútil" y "falsaria" de Vox
+</div>
+</div>
+
+<div class="ambos2">
+<div id="contenedornot"><div id="efectonot"></div><div id="efectonot2"></div></div>
+<div class="descripcion">
+La moción de censura, en imágenes
+</div>
+<div class="tiemp">
+Miercoles, 21 Oct 2020. 11:42:14h.
+</div>
+</div>
+
+</div>
+
+<div class="noticia5">
+
+<div class="ambos">
+<div class="imagen">
+<img width="100%" height="100%" src="../archivos/iconos/europapresslogo.png" style="border: solid 1px var(--temahora); box-shadow: var(--sombra); opacity: 0.85; border-radius: 3px;"></img>
+</div>
+<div class="tit">
+España supera el millón de contagios de Covid-19, 6.114 en las últimas 24 horas
+</div>
+</div>
+
+<div class="ambos2">
+<div id="contenedornot"><div id="efectonot"></div><div id="efectonot2"></div></div>
+<div class="descripcion">
+España ha alcanzado los 1.005.295 contagios de Covid-19 desde que comenzó de la pandemia, de los cuales 6.114 se han registrado en las últimas 24 horas, según el informe publicado este miércoles por el Ministerio de Sanidad, en el que no hay cifras actualizadas de la incidencia del coronavirus en el País Vasco por "problemas técnicos".
+</div>
+<div class="tiemp">
+Miercoles, 21 Oct 2020. 16:51:16h.
+</div>
+</div>
+
+</div>
+
+<div class="noticia6">
+
+<div class="ambos">
+<div class="imagen">
+<img width="100%" height="100%" src="../archivos/iconos/europapresslogo.png" style="border: solid 1px var(--temahora); box-shadow: var(--sombra); opacity: 0.85; border-radius: 3px;"></img>
+</div>
+<div class="tit">
+Ayuso avanza que el viernes aprobará nuevas restricciones para Madrid y pone el foco en las fiestas nocturnas
+</div>
+</div>
+
+<div class="ambos2">
+<div id="contenedornot"><div id="efectonot"></div><div id="efectonot2"></div></div>
+<div class="descripcion">
+La presidenta de la Comunidad, Isabel Díaz Ayuso, ha avanzado que el viernes el Gobierno regional aprobará nuevas restricciones en Madrid que sustituirán a las que decaen el sábado con el estado de alarma y ha puesto el foco en que es necesario poner fin a las fiestas nocturnas.
+</div>
+<div class="tiemp">
+Miercoles, 21 Oct 2020. 12:02:58h.
+</div>
+</div>
+
+</div>
+
+<div class="noticia7">
+
+<div class="ambos">
+<div class="imagen">
+<img width="100%" height="100%" src="../archivos/iconos/europapresslogo.png" style="border: solid 1px var(--temahora); box-shadow: var(--sombra); opacity: 0.85; border-radius: 3px;"></img>
+</div>
+<div class="tit">
+El Papa defiende que los homosexuales tengan "derecho" a estar "cubiertos legalmente" y a "tener una familia"
+</div>
+</div>
+
+<div class="ambos2">
+<div id="contenedornot"><div id="efectonot"></div><div id="efectonot2"></div></div>
+<div class="descripcion">
+El Papa ha defendido que los homosexuales tengan "derecho" a estar "cubiertos legalmente" y a "tener una familia". El pontífice ha hecho estas declaraciones en el documental 'Francesco', dirigido por el ruso Evgeny Afineevsky, que se ha estrenado este 21 de octubre en el Festival de Cine de Roma.
+</div>
+<div class="tiemp">
+Miercoles, 21 Oct 2020. 15:22:57h.
+</div>
+</div>
+
+</div>
+
+<div class="noticia8">
+
+<div class="ambos">
+<div class="imagen">
+<img width="100%" height="100%" src="../archivos/iconos/europapresslogo.png" style="border: solid 1px var(--temahora); box-shadow: var(--sombra); opacity: 0.85; border-radius: 3px;"></img>
+</div>
+<div class="tit">
+Moción de censura al Real Madrid
+</div>
+</div>
+
+<div class="ambos2">
+<div id="contenedornot"><div id="efectonot"></div><div id="efectonot2"></div></div>
+<div class="descripcion">
+El Real Madrid hincó la rodilla ante el Shakhtar Donetsk (2-3) para comenzar, por primera vez en su historia, perdiendo en la Liga de Campeones, además de hipotecar el pase a la siguiente ronda y de afear aún más su imagen antes de disputar el 'Clásico' del próximo sábado.
+</div>
+<div class="tiemp">
+Miercoles, 21 Oct 2020. 19:04:37h.
+</div>
+</div>
+
+</div>
+
+<div class="noticia9">
+
+<div class="ambos">
+<div class="imagen">
+<img width="100%" height="100%" src="../archivos/iconos/europapresslogo.png" style="border: solid 1px var(--temahora); box-shadow: var(--sombra); opacity: 0.85; border-radius: 3px;"></img>
+</div>
+<div class="tit">
+El Consejo de Europa advierte a España que su reforma del CGPJ se aparta de las normas europeas
+</div>
+</div>
+
+<div class="ambos2">
+<div id="contenedornot"><div id="efectonot"></div><div id="efectonot2"></div></div>
+<div class="descripcion">
+Justicia responderá al GRECO para aclarar "inexactitudes" en sus informaciones
+</div>
+<div class="tiemp">
+Miercoles, 21 Oct 2020. 10:39:04h.
+</div>
+</div>
+
+</div>
+
+<div class="noticia10">
+
+<div class="ambos">
+<div class="imagen">
+<img width="100%" height="100%" src="../archivos/iconos/europapresslogo.png" style="border: solid 1px var(--temahora); box-shadow: var(--sombra); opacity: 0.85; border-radius: 3px;"></img>
+</div>
+<div class="tit">
+El Supremo aprecia falta de transparencia en las hipotecas con IRPH, pero no abusividad
+</div>
+</div>
+
+<div class="ambos2">
+<div id="contenedornot"><div id="efectonot"></div><div id="efectonot2"></div></div>
+<div class="descripcion">
+El Tribunal Supremo ha determinado que en las hipotecas ligadas al Índice de Referencia de los Préstamos Hipotecarios (IRPH) analizados existe falta de transparencia por no haberse informado de la evolución del mismo, pero no abusividad.
+</div>
+<div class="tiemp">
+Miercoles, 21 Oct 2020. 11:04:12h.
+</div>
+</div>
+
+</div>
+
+</body>
+</html>

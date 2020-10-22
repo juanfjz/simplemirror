@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<variables>
+	<tiempo>
+		<latitud>39.036</latitud>
+		<longitud>-2.992</longitud>
+		<titulotiem>Argamasilla de Alba</titulotiem>
+		<apikey>Your openweathermap key</apikey> 		
+	</tiempo>
+	<noticias>
+		<noticia>
+			<url>https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/portada</url> <!---URL RSS en formato XML---->
+			<logo>elpaislogo.jpg</logo> <!---Logo del canal RSS, colocado en la carpeta archivos/iconos---->
+			<fondo>fondo1.jpg</fondo> <!---Logo del canal RSS, colocado en la carpeta archivos/fondos---->
+			<color>210,210,210</color>  <!---Color de enfasis en formato RGB---->
+		</noticia>
+		<noticia>
+			<url>https://www.europapress.es/rss/rss.aspx</url>
+			<logo>europapresslogo.png</logo>
+			<fondo>fondo2.jpg</fondo>
+			<color>175,255,250</color>  
+		</noticia>
+		<noticia>
+			<url>http://rss.sensacine.com/actualidad/cine</url>
+			<logo>cinelogo.png</logo>
+			<fondo>fondo3.jpg</fondo>
+			<color>0,140,0</color>  
+		</noticia>
+		<noticia>
+			<url>http://rss.sensacine.com/actualidad/tv</url>
+			<logo>serieslogo.jpg</logo>
+			<fondo>fondo4.jpg</fondo>
+			<color>153,102,153</color>  
+		</noticia>
+		<noticia>
+			<url>https://www.lavanguardia.com/mvc/feed/rss/home</url>
+			<logo>lavanguardialogo.jpg</logo>
+			<fondo>fondo5.jpg</fondo>
+			<color>102,102,245</color>  
+		</noticia>
+		<noticia>
+			<url>https://www.antena3.com/noticias/rss/4013050.xml</url>
+			<logo>antena3logo.jpg</logo>
+			<fondo>fondo6.jpg</fondo>
+			<color>230,57,0</color>  
+		</noticia>
+		<noticia>
+			<url>https://www.elcorreo.com/rss/2.0/portada</url>
+			<logo>elcorreologo.png</logo>
+			<fondo>fondo7.jpg</fondo>
+			<color>204,51,51</color>  
+		</noticia>
+		<noticia>
+			<url>https://www.abc.es/rss/feeds/abcPortada.xml</url>
+			<logo>abclogo.jpg</logo>
+			<fondo>fondo8.jpg</fondo>
+			<color>51,255,153</color>  
+		</noticia>
+	</noticias>
+</variables>

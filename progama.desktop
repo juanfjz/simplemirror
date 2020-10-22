@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=SimpleMirror
+Path=/home/pi/simplemirror
+Exec=/home/pi/simplemirror/iniciar.sh
+Type=Application
+Terminal=false
+Icon=/home/pi/simplemirror/archivos/iconos/serieslogo.jpg

@@ -1,0 +1,301 @@
+@font-face {
+  font-family: "Iceland";
+  src: url("../archivos/fuentes/iceland.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Manuale";
+  src: url("../archivos/fuentes/manuale.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../archivos/fuentes/roboto.ttf") format("truetype");
+}
+:root{
+--tamanog: 5vw;
+--tamanotem: 4.2vw;		
+--tamanom: 3vw;
+--tamanoh: 3vw;
+--tamanoinfo: 2vw;
+--tamanoig: 35vh;
+--tamanoim: 8vw;
+--tamanoip: 3.3vw;
+--tamanoipp: 2.5vw;		
+}
+
+body { 
+    cursor: none;
+}
+
+#principal {
+width: 101%;
+height: 101%;
+overflow: hidden;
+color: #ffffff;
+position: absolute;
+margin-top: -2%;
+margin-left: -2%;
+}
+
+#colizq {
+	position: absolute;
+	top: 6%;
+	left: 2.5%;
+	height: 90%;
+	width: 35%;
+	font-family: 'Iceland';
+}
+
+#colder {
+	position: absolute;
+	left: 39%;
+	top: 6%;
+	height: 90%;
+	width: 59.5%;
+}
+
+#main-panel {
+position: absolute;
+text-align: center;
+width: 100%;
+height: 100%;
+}
+
+#titulo {
+font-size: var(--tamanog);
+width: 100%;
+text-align: center;
+font-family: 'Iceland';
+}
+
+#main-icon {
+    height: var(--tamanoig);
+}
+
+.columnita1 {
+	position: absolute;
+	width: 49%;
+	height: 100%;
+}
+
+.columnita2 {
+	position: absolute;
+	width: 49%;
+	left: 51%;
+	height: 100%;
+}
+
+.columnita1 img {
+    position: relative;
+    height: var(--tamanoip);
+    padding-right: 5%;
+    padding-left: 15%;
+}
+
+.columnita2 img {
+    position: relative;	 
+    height: var(--tamanoip);
+    padding-right: 5%;
+    padding-left: 15%;
+}
+
+.subfila1 {
+text-align: center;
+width: 100%;
+height: 23%;
+overflow: hidden;
+position: absolute;
+}
+
+.subfila2 {
+text-align: center;
+width: 100%;
+height: 52%;
+top: 23%;
+overflow: hidden;
+position: absolute;
+}
+
+.subfila2 span {
+font-size: var(--tamanotem);
+}
+
+.subfila3 {
+text-align: center;
+width: 100%;
+height: 25%;
+top: 75%;
+overflow: hidden;
+position: absolute;
+}
+
+.fila1 {
+position: absolute;
+font-size: var(--tamanom);
+text-align: left;
+left: 0%;
+width: 100%;
+height: 33.33%;
+background: rgba(200,200,200,0.1);
+}
+
+.fila2 {
+position: absolute;
+text-align: left;
+font-size: var(--tamanom);
+left: 0%;
+top: 33.33%;
+width: 100%;
+height: 33.33%;
+background: rgba(200,200,200,0.1);
+}
+
+.fila3 {
+position: absolute;
+text-align: left;
+font-size: var(--tamanom);
+left: 0%;
+top: 66.66%;
+width: 100%;
+height: 33.33%;
+background: rgba(200,200,200,0.1);
+}
+
+.filarriba {
+position: absolute;
+left: 0%;
+top: 2%;
+width: 100%;
+height: 47%;
+background: rgba(200,200,200,0.1);
+}
+
+.filabajo {
+position: absolute;
+left: 0%;
+top: 53%;
+width: 100%;
+height: 47%;
+background: rgba(200,200,200,0.1);
+}
+
+.centrado{
+	position: relative;
+    top: 50%;
+    transform: translateY(-50%);	   
+}
+
+.centrado2{
+	display: inline-block;
+	top: calc(50% - (var(--tamanoinfo) * 0.8));
+	position: absolute;
+}
+
+.col-1 {
+	position: absolute;
+    width: 20%;
+	height: 100%;
+	left: 0%;
+
+}
+
+.col-2 {
+	position: absolute;
+    width: 20%;
+	height: 100%;
+	left: 20%;
+
+}
+
+.col-3 {
+	position: absolute;
+    width: 20%;
+	height: 100%;
+	left: 40%;
+
+}
+
+.col-4 {
+	position: absolute;
+    width: 20%;
+	height: 100%;
+	left: 60%;
+}
+
+.col-5 {
+	position: absolute;
+    width: 20%;
+	height: 100%;
+	left: 80%;
+
+}
+
+
+#hourly-icon-1, #hourly-icon-2, #hourly-icon-3, #hourly-icon-4, #hourly-icon-5 {
+    position: relative;
+	height: var(--tamanoim);
+	top: calc((100% - var(--tamanoim)) / 2);
+}
+
+.hours {
+font-size: var(--tamanoh);
+font-family: 'Roboto';
+width: 100%;
+height: calc(var(--tamanoh) + 1vw);
+left: 0%;
+top: 2%;
+position: absolute;
+text-align: center;
+}
+
+.iconin2 {
+font-family: 'Roboto';
+width: 100%;
+height: calc(80% - (var(--tamanoh) + 1vw));
+left: 0%;
+top: calc(var(--tamanoh) + 1vw);
+position: absolute;
+text-align: center;
+}
+
+.infop2 {
+font-size: var(--tamanoinfo);
+font-family: 'Roboto';
+width: 100%;
+height: 7%;
+bottom: 17%;
+left: 0%;
+position: absolute;
+}
+
+.infop3 {
+font-size: var(--tamanoinfo);
+font-family: 'Roboto';
+width: 100%;
+height: 7%;
+bottom: 5%;
+left: 0%;
+position: absolute;
+}
+
+.infop3 img{
+	position: relative;
+    height: var(--tamanoipp);
+	top: calc((100% - var(--tamanoipp)) / 2);
+	padding-right: 10%;
+	padding-left: 25%;
+
+}
+
+.infop2 img{
+    position: relative;
+    height: var(--tamanoipp);
+	top: calc((100% - var(--tamanoipp)) / 2);
+	padding-right: 10%;
+	padding-left: 25%;
+}
+
+#daily-icon-1, #daily-icon-2, #daily-icon-3, #daily-icon-4, #daily-icon-5 {
+    position: relative;
+	height: var(--tamanoim);
+	top: calc((100% - var(--tamanoim)) / 2);
+}
