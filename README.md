@@ -1,8 +1,7 @@
 # simplemirror
 Smart Mirror for raspberry Pi written in Python
 
-
-
+------------------------------------------------------------------------------------
 
   1. Instalación del software:
 
@@ -32,7 +31,7 @@ Para ello debemos ubicar el lanzador "simplemirror.desktop" en el directorio /ho
 1.4. Resolución de pantalla.
 El programa deberia visualizarse bien en la mayoria de monitores convencionales. No obstante puede haber secciones que se muestren mal debido al tamaño de las fuentes o las estructuras. Para solucionarlos deberemos localizar en los respectivos archivos css los elementos con tamaño desproporcionado y ajustar su tamaño manualmente. Para ello recomiendo utilizar las herramientas para desarrollador de chromium.
 
-
+------------------------------------------------------------------------------------
 
   2. Instalacion del Hadware.
 Simple mirror viene preparado para ser utilizado con 3 pulsadores conectados al puerto GPIO (en nuestro caso a los pines X,Z,Y). Dichos botones tendrian las siguientes funciones:
@@ -43,8 +42,7 @@ Simple mirror viene preparado para ser utilizado con 3 pulsadores conectados al 
 
 -C. Apagar raspberry pi. (Pin 12 - Modo BCM)
 
-
-
+------------------------------------------------------------------------------------
 
   3. Recursos utilizados:
 - Librerias javascript Theter y Jquery.
