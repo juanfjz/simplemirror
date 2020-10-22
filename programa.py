@@ -14,16 +14,15 @@ from io import open
 import re
 import subprocess
 from threading import Timer
-import mpr121
-from time import sleep
 
-GPIO.setmode(GPIO.BOARD)
-GPIO.setup(35, GPIO.OUT)
-GPIO.output(35, True)
-GPIO.setup(31, GPIO.OUT)
-GPIO.output(31, True)
-GPIO.setup(7, GPIO.IN)
-
+GPIO.setmode(GPIO.BCM)
+BUTTON1 = 22
+BUTTON2 = 24
+BUTTON3 = 12
+GPIO.setup(BUTTON1, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.setup(BUTTON2, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.setup(BUTTON3, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+    
 estadomonitor = 'encendido'
 
 SCOPES = ['https://www.googleapis.com/auth/calendar.readonly']
@@ -360,89 +359,34 @@ def signal_handler(sig, frame):
     GPIO.cleanup()
     sys.exit(0)
 
-t2 = ''
-
-class repetirtimer2(object):
-    def __init__(self, interval, function, args=[], kwargs={}):
-        self._interval = interval
-        self._function = function
-        self._args = args
-        self._kwargs = kwargs
-    def start(self):
-        global t2
-        t2 = Timer(self._interval, self._function, *self._args, **self._kwargs)
-        t2.start()
-        
-    def cancel(self):
-        global t2
-        t2.cancel()
-
-parpadear = 1
-
-def parpadeo():
-    global parpadear
-    while parpadear < 3:
-        GPIO.output(35, False)
-        sleep(1)
-        GPIO.output(35, True)
-        sleep(1)
-
-parpadeito = repetirtimer2(0.1,parpadeo,())
-
-def boton4():
-    global parpadear
-    parpadear = 1
-    parpadeito.start()
+def boton1(channel):
     energia.cancel()
     leervariables()
     usarvariables()
     subprocess.call (['xdotool', 'key', 'F6'])
-    energia.start()
-    parpadear = 4   
-    parpadeito.cancel()
-    GPIO.output(35, True)
-         
-def boton2():
-    subprocess.call (['shutdown', '-h', 'now'])
-    
-def boton3():
+    energia.start()        
+  
+def boton2(channel):
     global estadomonitor
     if estadomonitor == 'encendido':
          subprocess.call (['vcgencmd', 'display_power', '0'])
-         GPIO.output(31, False)
-         GPIO.output(35, False)
          estadomonitor = 'apagado'
          energia.cancel()
     else:
          subprocess.call (['vcgencmd', 'display_power', '1'])
-         GPIO.output(35, True)
-         GPIO.output(31, True)
          estadomonitor = 'encendido'
          actualizacal()
          energia.start()
 
-def pulsada(channel):
-    touches = [0,0,0,0,0,0];
-    touchData = mpr121.readData(0x5a)
-    for i in range(6):
-        if (touchData & (1<<i)):
-            if (touches[i] == 0):
-                if (i == 4):
-                    boton4()
-                if (i == 2):
-                    boton2()
-                if (i == 3):
-                    boton3()                                       
-        touches[i] = 1;
+def boton3(channel):
+    subprocess.call (['shutdown', '-h', 'now'])
 
 energia.start()
 actualizacal()
 
 if __name__ == '__main__':
-    mpr121.TOU_THRESH = 0x30
-    mpr121.REL_THRESH = 0x33
-    mpr121.setup(0x5a)
-    
-    GPIO.add_event_detect(7, GPIO.FALLING, callback=pulsada)
+    GPIO.add_event_detect(BUTTON1, GPIO.FALLING, callback=boton1, bouncetime=300)
+    GPIO.add_event_detect(BUTTON2, GPIO.FALLING, callback=boton2, bouncetime=300)
+    GPIO.add_event_detect(BUTTON3, GPIO.FALLING, callback=boton3, bouncetime=300)    
     signal.signal(signal.SIGINT, signal_handler)
     signal.pause()
