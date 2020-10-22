@@ -45,7 +45,7 @@ El programa deberia visualizarse bien en la mayoria de monitores convencionales.
 
 ------------------------------------------------------------------------------------
 
-Simple mirror viene preparado para ser utilizado con 3 pulsadores conectados al puerto GPIO (en nuestro caso a los pines X,Z,Y). Dichos botones tendrian las siguientes funciones:
+Simple mirror viene preparado para ser utilizado con 3 pulsadores conectados al puerto GPIO (en nuestro caso a los pines 22,24,12). Dichos botones tendrian las siguientes funciones:
 
 -A. Cambio entre fuentes RSS y temas. (Pin 22 - Modo BCM)
 
