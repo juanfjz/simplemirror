@@ -17,9 +17,13 @@ Smart Mirror for raspberry Pi written in Python
 
 1.2. Vincular el calendario con tu cuenta Google.
 -Para sincronizar el calendario con nuestro calendario google debemos activar la API de google calendar en nuestra cuenta google. Para ello:
+
      -Acudimos a: https://developers.google.com/calendar/quickstart/python.
+     
      -Clickamos en "Eneable Calendar API" y completamos los pasos que nos piden. Se descargaran 2 archivos llamados "credentials.json" y "token.pickle" que debemos ubicar en la      carpeta "scripts". 
+     
      -Instalamos las librerias necesarias ejecutando el comando que nos dan en nuestro directorio principal: "pip install --upgrade google-api-python-client google-auth-httplib2       google-auth-oauthlib".
+     
      -La primera vez que ejecutemos el programa nos abrira una pestaña solicitandonos que permitamos el acceso del programa a nuestra cuenta google, una vez que aceptemos            habremos terminado este paso.
 
 1.3. Ejecutar el programa al inicio. 
@@ -32,8 +36,11 @@ El programa deberia visualizarse bien en la mayoria de monitores convencionales.
 
   2. Instalacion del Hadware.
 Simple mirror viene preparado para ser utilizado con 3 pulsadores conectados al puerto GPIO (en nuestro caso a los pines X,Z,Y). Dichos botones tendrian las siguientes funciones:
+
 -A. Cambio entre fuentes RSS y temas. (Pin 22 - Modo BCM)
+
 -B. Apagar y encender la pantalla. (Pin 24 - Modo BCM)
+
 -C. Apagar raspberry pi. (Pin 12 - Modo BCM)
 
 
