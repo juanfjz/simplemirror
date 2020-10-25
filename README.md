@@ -3,7 +3,15 @@ Smart Mirror for raspberry Pi written in Python
 
 ------------------------------------------------------------------------------------
 
-  1. Instalación del software:
+   1. Requerimientos previos:
+- Raspbian.
+- Python 3 o superior.
+- Administrador de paquetes Pip.
+- Xdotool.
+
+------------------------------------------------------------------------------------
+
+  2. Configuración del software:
 
 ------------------------------------------------------------------------------------
 
@@ -36,7 +44,12 @@ Para ello debemos ubicar el lanzador "simplemirror.desktop" en el directorio /ho
 
 ------------------------------------------------------------------------------------
 
-1.4. Resolución de pantalla.
+1.4. Salvapantallas.
+Para que podamos controlar la pantalla a voluntad debemos desactivar el salvapantallas que viene por defecto en raspbian. El  metodo mas sencillo es instalar xscreensaver con "sudo apt-get install xscreensaver". Una vez instalada, abrimos la aplicacion y configuramos la opcion "mode" como "disable screen saver".
+
+------------------------------------------------------------------------------------
+
+1.5. Resolución de pantalla.
 El programa deberia visualizarse bien en la mayoria de monitores convencionales. No obstante puede haber secciones que se muestren mal debido al tamaño de las fuentes o las estructuras. Para solucionarlos deberemos localizar en los respectivos archivos css los elementos con tamaño desproporcionado y ajustar su tamaño manualmente. Para ello recomiendo utilizar las herramientas para desarrollador de chromium.
 
 ------------------------------------------------------------------------------------
