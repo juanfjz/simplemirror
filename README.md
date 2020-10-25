@@ -4,7 +4,7 @@ Smart Mirror for raspberry Pi written in Python
 ------------------------------------------------------------------------------------
 
    1. Requerimientos previos:
-- Raspberry Pi OS.
+- Raspberry Pi OS (raspbian).
 - Python 3 o superior.
 - Administrador de paquetes Pip.
 - Xdotool.
