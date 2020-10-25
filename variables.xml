@@ -8,10 +8,10 @@
 	</tiempo>
 	<noticias>
 		<noticia>
-			<url>https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/portada</url> <!---URL RSS en formato XML---->
-			<logo>elpaislogo.jpg</logo> <!---Logo del canal RSS, colocado en la carpeta archivos/iconos---->
-			<fondo>fondo1.jpg</fondo> <!---Logo del canal RSS, colocado en la carpeta archivos/fondos---->
-			<color>210,210,210</color>  <!---Color de enfasis en formato RGB---->
+			<url>https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/portada</url>
+			<logo>elpaislogo.jpg</logo>
+			<fondo>fondo1.jpg</fondo>
+			<color>210,210,210</color>
 		</noticia>
 		<noticia>
 			<url>https://www.europapress.es/rss/rss.aspx</url>
