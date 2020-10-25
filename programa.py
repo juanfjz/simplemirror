@@ -18,7 +18,7 @@ from threading import Timer
 GPIO.setmode(GPIO.BCM)
 BUTTON1 = 22
 BUTTON2 = 24
-BUTTON3 = 12
+BUTTON3 = 16
 GPIO.setup(BUTTON1, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 GPIO.setup(BUTTON2, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 GPIO.setup(BUTTON3, GPIO.IN, pull_up_down=GPIO.PUD_UP)
