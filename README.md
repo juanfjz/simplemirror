@@ -64,7 +64,7 @@ Simple mirror viene preparado para ser utilizado con 3 pulsadores conectados al 
 
 -B. Apagar y encender la pantalla. (Pin 24 - Modo BCM)
 
--C. Apagar raspberry pi. (Pin 12 - Modo BCM)
+-C. Apagar raspberry pi. (Pin 16 - Modo BCM)
 
 ------------------------------------------------------------------------------------
 
