@@ -4,7 +4,7 @@ Smart Mirror for raspberry Pi written in Python
 ------------------------------------------------------------------------------------
 
    1. Requerimientos previos:
-- Raspbian.
+- Raspberry Pi OS.
 - Python 3 o superior.
 - Administrador de paquetes Pip.
 - Xdotool.
@@ -31,7 +31,8 @@ Smart Mirror for raspberry Pi written in Python
 
      -Acudimos a: https://developers.google.com/calendar/quickstart/python.
      
-     -Clickamos en "Eneable Calendar API" y completamos los pasos que nos piden. Se descargaran 2 archivos llamados "credentials.json" y "token.pickle" que debemos ubicar en la      carpeta "scripts". 
+     -Clickamos en "Eneable Calendar API" y completamos los pasos que nos piden. Clickamos en "Download client configuration" y se descargara 1 archivo llamado 
+      "credentials.json", que debemos ubicar en la carpeta "scripts". 
      
      -Instalamos las librerias necesarias ejecutando el comando que nos dan en nuestro directorio principal: "pip install --upgrade google-api-python-client google-auth-httplib2       google-auth-oauthlib".
      
