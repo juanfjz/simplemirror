@@ -41,7 +41,7 @@ Smart Mirror for raspberry Pi written in Python
 ------------------------------------------------------------------------------------
 
 1.3. Ejecutar el programa al inicio. 
-Para ello debemos ubicar el lanzador "simplemirror.desktop" en el directorio /home/"your user"/.config/autostart. Para que funcione correctamente debemos asegurarnos de que tanto "simplemirror.desktop" como "iniciar.sh" poseen permisos de ejecucion. 
+Para ello debemos ubicar el lanzador "simplemirror.desktop" en el directorio /home/"your user"/.config/autostart. Para que funcione correctamente debemos asegurarnos de que tanto "simplemirror.desktop" como "iniciar.sh" poseen permisos de ejecucion y "simplemirror.desktop" apunta correctamente a la ruta de "iniciar.sh". 
 
 ------------------------------------------------------------------------------------
 
