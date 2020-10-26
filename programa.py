@@ -340,7 +340,7 @@ def actualizacal():
         if mesito == '12':
             mes = 'Diciembre'               
         fechaguay = dia + ' de ' + mes + ' de ' + ano
-        texto2 = '<div id="eventin"><marquee direction="right" scrollamount="3">' + titulo + '</marquee></div><div id="fechaeventin">' + fechaguay + '</div>'
+        texto2 = '<div id="eventin"><marquee scrollamount="2">' + titulo + '</marquee></div><div id="fechaeventin">' + fechaguay + '</div>'
         global eventop
         conjunto.append(texto)
         eventop.append(texto2)        
