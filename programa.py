@@ -349,7 +349,7 @@ def actualizacal():
     evento1 = eventop[1]
     replace_line('calendario/calendario.html', 17, conjunto2)
     conjunto = [""]
-    replace_line('calendario/evento.html', 40, evento1)
+    replace_line('calendario/evento.html', 42, evento1)
     
 
 def signal_handler(sig, frame):
