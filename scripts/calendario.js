@@ -12375,7 +12375,7 @@ var FullCalendar = (function (exports) {
         }
         else {
             return function (num) {
-                return "+" + num + " " + moreLinkTextInput;
+               return num + " Eventos";
             };
         }
     }
