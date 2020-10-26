@@ -9026,7 +9026,8 @@ var FullCalendar = (function (exports) {
                 createElement("div", { className: 'fc-event-time' }, innerProps.timeText),
             createElement("div", { className: 'fc-event-title-container' },
                 createElement("div", { className: 'fc-event-title fc-sticky' },
-                createElement("marquee", { scrollAmount: '2' }, innerProps.event.title || createElement(Fragment, null, "\u00A0"))))));
+				createElement("div", { className: 'contengomarquesina' },
+                createElement("div", { className: 'marquesina' }, innerProps.event.title || createElement(Fragment, null, "\u00A0")))))));
     }
     function getSegAnchorAttrs(seg) {
         var url = seg.eventRange.def.url;
