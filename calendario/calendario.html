@@ -42,7 +42,21 @@ events: [
 	position: relative;
 	overflow: hidden;
   }
-
+ .contengomarquesina {  
+    width: 98%;
+    left: 1%;
+    overflow: hidden; 
+    white-space: nowrap;
+}
+  .marquesina {
+    display: inline-block; 
+    transform: translatex(50%); 
+    animation: marquesina 10s infinite normal linear 1s; 
+}
+@keyframes marquesina {
+  0% {transform: translatex(50%); }
+  100% {transform: translatex(-100%); }
+}
 </style>
 </head>
 <body>
