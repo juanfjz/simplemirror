@@ -26,7 +26,18 @@ body {
     color: rgba(255,255,255,1);
     top: calc(50% - 25vh);
     width: 80%;
-    left: 10%;	  
+    left: 10%;
+    overflow: hidden; 
+    white-space: nowrap; 	
+}
+  #orig {
+    display: inline-block; 
+    transform: translatex(0); 
+    animation: marquesina 14s infinite normal linear 1s; 
+}
+@keyframes marquesina {
+  0% {transform: translatex(0); }
+  100% {transform: translatex(calc(-50% - 25vw)); }
 }
   #fechaeventin {
     position: relative;
@@ -36,9 +47,18 @@ body {
     vertical-align: center;
     top: calc(50% - 17vh);
 }
+  #separador {
+    display: inline-block; 
+	width: 50vw;
+	height: 15vh;
+	overflow: hidden;
+	background-color: trasparent;
+}
+
+
 </style>
 </head>
 <body>
-<div id="eventin"><marquee scrollamount="2">Titulo</marquee></div><div id="fechaeventin">Fecha</div>
+<div id="eventin"><span id=orig>Este es el titulo de mi evento.<div id="separador"></div><span id=copia>Este es el titulo de mi evento.</span></span></div><div id="fechaeventin">Fecha</div>
 </body>
 </html>
