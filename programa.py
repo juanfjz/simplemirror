@@ -378,10 +378,9 @@ def boton2(channel):
 def boton3(channel):
     subprocess.call (['shutdown', '-h', 'now'])
 
-energia.start()
-actualizacal()
-
 if __name__ == '__main__':
+    energia.start()
+    actualizacal()
     GPIO.add_event_detect(BUTTON1, GPIO.FALLING, callback=boton1, bouncetime=300)
     GPIO.add_event_detect(BUTTON2, GPIO.FALLING, callback=boton2, bouncetime=300)
     GPIO.add_event_detect(BUTTON3, GPIO.FALLING, callback=boton3, bouncetime=300)    
