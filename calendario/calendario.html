@@ -52,12 +52,13 @@ events: [
 }
  .marquesina {
   height: 9vh;
-  font-size: 1.6vw !important;
+  font-size: 1.4vw !important;
   line-height: 4.5vh !important;
   width: 100%;
   overflow: hidden;
   font-family: "Manuale" !important;
 }
+
 </style>
 </head>
 <body onload="rotaevento();">
@@ -81,17 +82,19 @@ var chi2 = document.querySelectorAll('.jajeji');
 var c = chi2[nume].children;
 var lastSheet = document.styleSheets[document.styleSheets.length - 1];
 var numit = c.length;
-var duracion = numit * 10;
+var efectoseg = 12;
+var duracion = numit * efectoseg;
 var porcentajei = 100 / numit;
 var porcentaje = porcentajei.toFixed(1);
 var porcentaje2 = parseFloat(porcentaje) + parseFloat(0.1);
-var porcentajesp1 = parseFloat(porcentaje) / 4;
-var porcentajesp2 = parseFloat(porcentajesp1) * 3;
+var porcentajesp1 = parseFloat(porcentaje) / 6;
+var porcentajesp2 = parseFloat(porcentajesp1) * 5;
+var desap = efectoseg - 3;
 for (var i = 0; i < c.length; i++) {
-var retraso = i * 10;
+var retraso = i * efectoseg;
     if (i == 0) {
 	  c[i].style.transform = "translatey(-100%)";
-	  c[i].style.animation = "desaparece" + contadorc + i + " 10s, aparece" + contadorc + i + " " + duracion + "s linear " + duracion + "s infinite";
+	  c[i].style.animation = "desaparece" + contadorc + i + " " + desap + "s, aparece" + contadorc + i + " " + duracion + "s linear " + duracion + "s infinite";
 	  lastSheet.insertRule("@keyframes aparece" + contadorc + i + " { 0% {transform: translatey(0); opacity: 0%;} " +  porcentajesp1 + "% {transform: translatey(0); opacity: 100%;} " + porcentajesp2 + "% {transform: translatey(0); opacity: 100%;} " + porcentaje + "% {transform: translatey(0); opacity: 0%;} " + porcentaje2 + "% {transform: translatey(-10vh); } 100% {transform: translatey(-10vh); }}", lastSheet.cssRules.length);
 	  lastSheet.insertRule("@keyframes desaparece" + contadorc + i + " { 0% {transform: translatey(0); opacity: 100%;} " +  porcentajesp2 + "% {transform: translatey(0); opacity: 100%;} 100% {transform: translatey(0); opacity: 0%;}}", lastSheet.cssRules.length);
 	}else{
