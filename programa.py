@@ -354,7 +354,7 @@ def actualizacal():
         
     conjunto2 = listToString(conjunto)
     evento1 = eventop[1]
-    replace_line('calendario/calendario.html', 17, conjunto2)
+    replace_line('calendario/calendario.html', 18, conjunto2)
     conjunto = [""]
     replace_line('calendario/evento.html', 49, evento1)
     
