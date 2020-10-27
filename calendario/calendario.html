@@ -14,7 +14,7 @@
       businessHours: true,
       dayMaxEvents: true, // allow "more" link when too many events
 events: [
-{title: "Este es el titulo de evento1", start: "2020-10-22"},{title: "Este es el titulo de evento2", start: "2020-10-22"},{title: "Este es el titulo de evento3", start: "2020-10-22"},{title: "Este es el titulo de evento4", start: "2020-10-22"},{title: "Este es el titulo de evento1", start: "2020-10-14"},{title: "Este es el titulo de evento1", start: "2020-10-31"},{title: "Este es el titulo de evento2", start: "2020-10-31"},{title: "Este es el titulo de evento1", start: "2020-11-22"},{title: "Este es el titulo de evento2", start: "2020-11-31"},{title: "Este es el titulo de evento1", start: "2020-12-22"},{title: "Este es el titulo de evento2", start: "2020-12-31"},
+{title: "Este es el titulo de evento1", start: "2020-10-22"},{title: "Este es el titulo de evento2", start: "2020-10-22"},{title: "Este es el titulo de evento3", start: "2020-10-22"},{title: "Este es el titulo de evento4", start: "2020-10-22"},{title: "Este es el titulo. Max 30 letras.", start: "2020-10-14"},{title: "Este es el titulo de evento1", start: "2020-10-31"},{title: "Este es el titulo de evento2", start: "2020-10-31"},{title: "Este es el titulo de evento1", start: "2020-11-22"},{title: "Este es el titulo de evento2", start: "2020-11-31"},{title: "Este es el titulo de evento1", start: "2020-12-22"},{title: "Este es el titulo de evento2", start: "2020-12-31"},
       ]
     });
 
@@ -45,7 +45,10 @@ events: [
   overflow: hidden !important;
 }
  .marquesina {
-  padding-bottom: 5vh;
+  background-color: blue;
+  height: 9vh;
+  padding-bottom: 1vh;
+  width: 100%;
 }
 </style>
 </head>
@@ -81,10 +84,10 @@ var retraso = i * 10;
     if (i == 0) {
 	    c[i].style.transform = "translatey(-100%)";
 		c[i].style.animation = "desaparece" + contadorc + i + " 10s, aparece" + contadorc + i + " " + duracion + "s linear " + duracion + "s infinite";
-		lastSheet.insertRule("@keyframes aparece" + contadorc + i + " { 0% {transform: translatey(0); opacity: 0%;} " +  porcentajesp1 + "% {transform: translatey(0); opacity: 100%;} " + porcentajesp2 + "% {transform: translatey(0); opacity: 100%;} " + porcentaje + "% {transform: translatey(0); opacity: 0%;} " + porcentaje2 + "% {transform: translatey(-100%); } 100% {transform: translatey(-100%); }}", lastSheet.cssRules.length);
+		lastSheet.insertRule("@keyframes aparece" + contadorc + i + " { 0% {transform: translatey(0); opacity: 0%;} " +  porcentajesp1 + "% {transform: translatey(0); opacity: 100%;} " + porcentajesp2 + "% {transform: translatey(0); opacity: 100%;} " + porcentaje + "% {transform: translatey(0); opacity: 0%;} " + porcentaje2 + "% {transform: translatey(-10vh); } 100% {transform: translatey(-10vh); }}", lastSheet.cssRules.length);
 		lastSheet.insertRule("@keyframes desaparece" + contadorc + i + " { 0% {transform: translatey(0); opacity: 100%;} " +  porcentajesp2 + "% {transform: translatey(0); opacity: 100%;} 100% {transform: translatey(0); opacity: 0%;}}", lastSheet.cssRules.length);
 	}else{
-	    lastSheet.insertRule("@keyframes aparece" + contadorc + i + " { 0% {transform: translatey(-" + i + "00%); opacity: 0%;} " +  porcentajesp1 + "% {transform: translatey(-" + i + "00%); opacity: 100%;} " + porcentajesp2 + "% {transform: translatey(-" + i + "00%); opacity: 100%;} " + porcentaje + "% {transform: translatey(-" + i + "00%); opacity: 0%;} " + porcentaje2 + "% {transform: translatey(0); } 100% {transform: translatey(0); }}", lastSheet.cssRules.length);
+	    lastSheet.insertRule("@keyframes aparece" + contadorc + i + " { 0% {transform: translatey(-" + i + "0vh); opacity: 0%;} " +  porcentajesp1 + "% {transform: translatey(-" + i + "0vh); opacity: 100%;} " + porcentajesp2 + "% {transform: translatey(-" + i + "0vh); opacity: 100%;} " + porcentaje + "% {transform: translatey(-" + i + "0vh); opacity: 0%;} " + porcentaje2 + "% {transform: translatey(0); } 100% {transform: translatey(0); }}", lastSheet.cssRules.length);
         c[i].style.animation = "aparece" + contadorc + i + " " + duracion + "s linear " + retraso + "s infinite";
     }
 }
