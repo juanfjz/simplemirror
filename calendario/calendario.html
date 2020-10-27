@@ -22,6 +22,10 @@ events: [
   });
 </script>
 <style>
+@font-face {
+  font-family: "Manuale";
+  src: url("../archivos/fuentes/manuale.ttf") format("truetype");
+}	
   body {
   margin-top: 0px;
   margin-left: 0px;
@@ -52,6 +56,7 @@ events: [
   line-height: 4.5vh !important;
   width: 100%;
   overflow: hidden;
+  font-family: "Manuale" !important;
 }
 </style>
 </head>
@@ -84,14 +89,15 @@ var porcentajesp1 = parseFloat(porcentaje) / 4;
 var porcentajesp2 = parseFloat(porcentajesp1) * 3;
 for (var i = 0; i < c.length; i++) {
 var retraso = i * 10;
+var vuelve = i * parseFloat(10.2);
     if (i == 0) {
-	    c[i].style.transform = "translatey(-100%)";
-		c[i].style.animation = "desaparece" + contadorc + i + " 10s, aparece" + contadorc + i + " " + duracion + "s linear " + duracion + "s infinite";
-		lastSheet.insertRule("@keyframes aparece" + contadorc + i + " { 0% {transform: translatey(0); opacity: 0%;} " +  porcentajesp1 + "% {transform: translatey(0); opacity: 100%;} " + porcentajesp2 + "% {transform: translatey(0); opacity: 100%;} " + porcentaje + "% {transform: translatey(0); opacity: 0%;} " + porcentaje2 + "% {transform: translatey(-10vh); } 100% {transform: translatey(-10vh); }}", lastSheet.cssRules.length);
-		lastSheet.insertRule("@keyframes desaparece" + contadorc + i + " { 0% {transform: translatey(0); opacity: 100%;} " +  porcentajesp2 + "% {transform: translatey(0); opacity: 100%;} 100% {transform: translatey(0); opacity: 0%;}}", lastSheet.cssRules.length);
+	  c[i].style.transform = "translatey(-100%)";
+	  c[i].style.animation = "desaparece" + contadorc + i + " 10s, aparece" + contadorc + i + " " + duracion + "s linear " + duracion + "s infinite";
+	  lastSheet.insertRule("@keyframes aparece" + contadorc + i + " { 0% {transform: translatey(0); opacity: 0%;} " +  porcentajesp1 + "% {transform: translatey(0); opacity: 100%;} " + porcentajesp2 + "% {transform: translatey(0); opacity: 100%;} " + porcentaje + "% {transform: translatey(0); opacity: 0%;} " + porcentaje2 + "% {transform: translatey(-10vh); } 100% {transform: translatey(-10vh); }}", lastSheet.cssRules.length);
+	  lastSheet.insertRule("@keyframes desaparece" + contadorc + i + " { 0% {transform: translatey(0); opacity: 100%;} " +  porcentajesp2 + "% {transform: translatey(0); opacity: 100%;} 100% {transform: translatey(0); opacity: 0%;}}", lastSheet.cssRules.length);
 	}else{
-	    lastSheet.insertRule("@keyframes aparece" + contadorc + i + " { 0% {transform: translatey(-" + i + "0vh); opacity: 0%;} " +  porcentajesp1 + "% {transform: translatey(-" + i + "0vh); opacity: 100%;} " + porcentajesp2 + "% {transform: translatey(-" + i + "0vh); opacity: 100%;} " + porcentaje + "% {transform: translatey(-" + i + "0vh); opacity: 0%;} " + porcentaje2 + "% {transform: translatey(0); } 100% {transform: translatey(0); }}", lastSheet.cssRules.length);
-        c[i].style.animation = "aparece" + contadorc + i + " " + duracion + "s linear " + retraso + "s infinite";
+	   lastSheet.insertRule("@keyframes aparece" + contadorc + i + " { 0% {transform: translatey(-" + vuelve + "vh); opacity: 0%;} " +  porcentajesp1 + "% {transform: translatey(-" + vuelve + "vh); opacity: 100%;} " + porcentajesp2 + "% {transform: translatey(-" + vuelve + "vh); opacity: 100%;} " + porcentaje + "% {transform: translatey(-" + vuelve + "vh); opacity: 0%;} " + porcentaje2 + "% {transform: translatey(0); } 100% {transform: translatey(0); }}", lastSheet.cssRules.length);
+	   c[i].style.animation = "aparece" + contadorc + i + " " + duracion + "s linear " + retraso + "s infinite";
     }
 }
 }
