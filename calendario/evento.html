@@ -21,44 +21,31 @@ body {
     position: relative;
     font-family: 'gruppo';
     font-weight: bold;
-    font-size: 20vh;
-    vertical-align: center;
+    font-size: 18vh;
     color: rgba(255,255,255,1);
-    top: calc(50% - 25vh);
     width: 80%;
     left: 10%;
     overflow: hidden; 
-    white-space: nowrap; 	
+    white-space: pre-line; 	
 }
-  #orig {
-    display: inline-block; 
-    transform: translatex(0); 
-    animation: marquesina 14s infinite normal linear 1s; 
-}
-@keyframes marquesina {
-  0% {transform: translatex(0); }
-  100% {transform: translatex(calc(-50% - 25vw)); }
-}
+
   #fechaeventin {
     position: relative;
     font-family: 'Iceland';
-    font-size: 12vh;
+    font-size: 14vh;
     color: var(--colorsec);
-    vertical-align: center;
-    top: calc(50% - 17vh);
-}
-  #separador {
-    display: inline-block; 
-	width: 50vw;
-	height: 15vh;
-	overflow: hidden;
-	background-color: trasparent;
+	padding-top: 10%;
 }
 
+  #general {
+	position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
 
 </style>
 </head>
 <body>
-<div id="eventin"><span id=orig>Este es el titulo de mi evento.<div id="separador"></div><span id=copia>Este es el titulo de mi evento.</span></span></div><div id="fechaeventin">Fecha</div>
+<div id="general"><div id="eventin">Este es el titulo muy largo del evento de hoy, max 50 letras.</div><div id="fechaeventin">Fecha</div></div>
 </body>
 </html>
