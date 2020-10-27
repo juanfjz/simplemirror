@@ -625,7 +625,7 @@ A HORIZONTAL event
     left: 0;  /* for sticky */
     right: 0; /* for sticky */
     max-width: 100%; /* clip overflow on this element */
-    overflow: hidden;
+    white-space: pre-line;
   }
 .fc-h-event.fc-event-selected:before {
     /* expand hit area */
