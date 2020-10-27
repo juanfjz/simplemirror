@@ -13,13 +13,13 @@
 :root{
 --tamanog: 5vw;
 --tamanotem: 4.2vw;		
---tamanom: 3vw;
---tamanoh: 3vw;
---tamanoinfo: 2vw;
+--tamanom: 2.2vw;
+--tamanoh: 2.2vw;
+--tamanoinfo: 1.6vw;
 --tamanoig: 35vh;
 --tamanoim: 8vw;
---tamanoip: 3.3vw;
---tamanoipp: 2.5vw;		
+--tamanoip: 2.1vw;
+--tamanoipp: 1.7vw;		
 }
 
 body { 
@@ -73,15 +73,22 @@ font-family: 'Iceland';
 
 .columnita1 {
 	position: absolute;
-	width: 49%;
-	height: 100%;
+	width: 46%;
+	left: 1%;
+	height: 98%;
+	border: 1px solid rgba(200,200,200,0.1);
+		border-radius: 4px;
+	background: linear-gradient(0deg, rgba(200,200,200,0.1) 10%, rgba(200,200,200,0.1) 50%);
 }
 
 .columnita2 {
 	position: absolute;
-	width: 49%;
-	left: 51%;
-	height: 100%;
+	width: 46%;
+	left: 52%;
+	height: 98%;
+	border: 1px solid rgba(200,200,200,0.1);
+		border-radius: 4px;
+	background: linear-gradient(0deg, rgba(200,200,200,0.1) 10%, rgba(200,200,200,0.1) 50%);
 }
 
 .columnita1 img {
@@ -135,7 +142,6 @@ text-align: left;
 left: 0%;
 width: 100%;
 height: 33.33%;
-background: rgba(200,200,200,0.1);
 }
 
 .fila2 {
@@ -146,7 +152,6 @@ left: 0%;
 top: 33.33%;
 width: 100%;
 height: 33.33%;
-background: rgba(200,200,200,0.1);
 }
 
 .fila3 {
@@ -157,7 +162,6 @@ left: 0%;
 top: 66.66%;
 width: 100%;
 height: 33.33%;
-background: rgba(200,200,200,0.1);
 }
 
 .filarriba {
@@ -166,7 +170,9 @@ left: 0%;
 top: 2%;
 width: 100%;
 height: 47%;
-background: rgba(200,200,200,0.1);
+	border: 1px solid rgba(200,200,200,0.1);
+	border-radius: 4px;
+	background: linear-gradient(0deg, rgba(200,200,200,0.1) 10%, rgba(200,200,200,0.1) 50%);
 }
 
 .filabajo {
@@ -175,13 +181,27 @@ left: 0%;
 top: 53%;
 width: 100%;
 height: 47%;
-background: rgba(200,200,200,0.1);
+	border: 1px solid rgba(200,200,200,0.1);
+		border-radius: 4px;
+	background: linear-gradient(0deg, rgba(200,200,200,0.1) 10%, rgba(200,200,200,0.1) 50%);
 }
 
 .centrado{
 	position: relative;
     top: 50%;
     transform: translateY(-50%);	   
+}
+
+.arriba{
+	position: relative;
+    top: 50%;
+    transform: translateY(-75%);	   
+}
+
+.abajo{
+	position: relative;
+    top: 50%;
+    transform: translateY(-25%);	   
 }
 
 .centrado2{
@@ -242,7 +262,7 @@ font-family: 'Roboto';
 width: 100%;
 height: calc(var(--tamanoh) + 1vw);
 left: 0%;
-top: 2%;
+top: 7%;
 position: absolute;
 text-align: center;
 }
@@ -250,9 +270,9 @@ text-align: center;
 .iconin2 {
 font-family: 'Roboto';
 width: 100%;
-height: calc(80% - (var(--tamanoh) + 1vw));
+height: calc(67% - var(--tamanoh) - 1vw);
 left: 0%;
-top: calc(var(--tamanoh) + 1vw);
+top: calc(var(--tamanoh) + 1vw + 7%);
 position: absolute;
 text-align: center;
 }
@@ -262,7 +282,7 @@ font-size: var(--tamanoinfo);
 font-family: 'Roboto';
 width: 100%;
 height: 7%;
-bottom: 17%;
+bottom: 19%;
 left: 0%;
 position: absolute;
 }
@@ -272,7 +292,7 @@ font-size: var(--tamanoinfo);
 font-family: 'Roboto';
 width: 100%;
 height: 7%;
-bottom: 5%;
+bottom: 7%;
 left: 0%;
 position: absolute;
 }
