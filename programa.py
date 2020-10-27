@@ -314,10 +314,10 @@ def actualizacal():
         tituloge = titulo
         titulope = titulo
         longi = len(titulo)
-        if longi > 51:
-           tituloge = titulo[0:50] + '...'
-        if longi > 25:
-           titulope = titulo[0:22] + '...'
+        if longi > 50:
+           tituloge = titulo[0:47] + '...'
+        if longi > 30:
+           titulope = titulo[0:27] + '...'
         texto = '{title: "' + titulope + '", start: "' + fecha + '"},'
         ano = fecha[0:4]
         dia = fecha[8:10]
