@@ -311,7 +311,14 @@ def actualizacal():
         fecha = event['start'].get('dateTime', event['start'].get('date'))
         fecha = fecha[0:10]
         titulo = event['summary']
-        texto = '{title: "' + titulo + '", start: "' + fecha + '"},'
+        tituloge = titulo
+        titulope = titulo
+        longi = len(titulo)
+        if longi > 51:
+           tituloge = titulo[0:50] + '...'
+        if longi > 25:
+           titulope = titulo[0:22] + '...'
+        texto = '{title: "' + titulope + '", start: "' + fecha + '"},'
         ano = fecha[0:4]
         dia = fecha[8:10]
         mesito = fecha[5:7]
@@ -340,7 +347,7 @@ def actualizacal():
         if mesito == '12':
             mes = 'Diciembre'               
         fechaguay = dia + ' de ' + mes + ' de ' + ano
-        texto2 = '<div id="general"><div id="eventin">' + titulo + '</div><div id="fechaeventin">' + fechaguay + '</div></div>'
+        texto2 = '<div id="general"><div id="eventin">' + tituloge + '</div><div id="fechaeventin">' + fechaguay + '</div></div>'
         global eventop
         conjunto.append(texto)
         eventop.append(texto2)        
