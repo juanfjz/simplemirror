@@ -152,7 +152,7 @@ def usarvariables():
     colorfinal = colorf[cuenta] + ','
     colorfinall = '(' + colorfinal + '1)'
     colorpri = '--colorpri: rgba(' + colorfinal + '1);'
-    colorpri2 = '--colorsec: rgba(' + colorfinal + '0.2);'
+    colorpri2 = '--colorpri2: rgba(' + colorfinal + '0.2);'
     resplandor = '--resplandorentrada: 0px 0px 10px rgba(' + colorfinal + '0.8);'
     sombra = '--fc-today-bg-color: rgba(' + colorfinal + '0.4);'
     colornoti = '--temahora: rgba(' + colorfinal + '1);'
@@ -183,7 +183,7 @@ def usarvariables():
     replace_line('css/principal.css', 19, colorpri)
     replace_line('css/principal.css', 20, colorpri2)
     replace_line('css/principal.css', 27, resplandor)          
-    replace_line('css/principal.css', 35, fondofinal)
+    replace_line('css/principal.css', 34, fondofinal)
     replace_line('css/calendario.css', 32, sombra)
     replace_line('calendario/evento.html', 13, colorsec)            
     replace_line('scripts/tiempo.js', 2, latitudfinal) 
