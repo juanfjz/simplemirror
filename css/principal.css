@@ -230,7 +230,7 @@ width: 14.28%;
 
 } 
 
-.colorespe {color: var(--colorsec);}
+.colorespe {color: var(--colorpri);}
 
 @keyframes rota {
   0% {
@@ -314,7 +314,7 @@ font-family: 'Iceland';
 
 .time2 {
 font-family: 'Iceland';
-  color: var(--colorsec);
+  color: var(--colorpri);
   letter-spacing: 0.02em;
   font-size: var(--tamanom);
 }
