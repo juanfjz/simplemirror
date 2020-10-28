@@ -17,7 +17,7 @@
 :root{
 --colortitulos: rgba(255,255,255,1);
 --colorpri: rgba(175,255,250,1);
---colorsec: rgba(175,255,250,1);
+--colorpri2: rgba(175,255,250,0.2);
 
 --gradientemenu: linear-gradient(0deg, rgba(255,255,200,0) 0%, rgba(255,255,200,0) 100%);
 --sombramenucal: inset 0px 0px 1px 1px rgba(255,255,255,0);
@@ -29,7 +29,6 @@
 --colorhora: rgba(255, 255, 255, 1);
 
 --sombrageneral: 0px 0px 20px 5px rgba(200,200,200,0.4);
---colorpri2: rgba(175,255,250,0.2);
 --sombraesp3: inset 0px 0px 5px 2px rgba(200,200,200,0.4), inset 0px 0px 15px 2px var(--colorpri);
 --opacidadg: rgba(0,0,0,0.3);
 --fondod: url("../archivos/fondos/fondo2.jpg");
