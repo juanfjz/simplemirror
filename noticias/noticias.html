@@ -4,13 +4,11 @@
 <style type="text/css">
 :root{
 --tematitulo: rgba(255,255,255,1);
---fondotitular: rgba(200,200,200,0.1);
---bordetitular: none;
---sombratitular: 0px 0px 10px 3px rgba(180,180,180,0);
+--fondotitular: linear-gradient(0deg, rgba(200,200,200,0.1) 10%, rgba(200,200,200,0.1) 70%);
+--bordetitular: 1px solid rgba(200,200,200,0.1);
 --fondodesc: rgba(200,200,200,0.1);
---bordedesc: none;
---sombradesc: inset 0px 0px 15px 4px rgba(0,0,0,0);
---temahora: rgba(175,255,250,1);
+--bordedesc: 1px solid rgba(200,200,200,0.1);
+--temahora: rgba(210,210,210,1);
 --tematexto: rgba(255,255,255,1);
 --sombra: 3px 3px 15px -4px rgba(180,180,180,0.6);
 }
@@ -51,23 +49,21 @@ body {
 }
 
 .ambos {
- height: 100px;
+ height: 20%;
  width: 97%;
  overflow:hidden;
  position: absolute;
  background: var(--fondotitular);
  border: var(--bordetitular);
- box-shadow: var(--sombratitular);
- border-radius: 3px;
+ border-radius: 4px;
 }
 
 .imagen {
-  margin-top: 15px;
-  margin-left: 15px;
-  width: 70px;
-  height: 70px;
+  margin-top: 10px;
+  margin-left: 10px;
+  height: calc(20vh - 20px);
+  width: calc(20vh - 20px);
   float: left;
-  padding-right: 10px;
 }
 
 .tit {
@@ -78,152 +74,169 @@ color: var(--tematitulo);
 text-align: justify;
 position: absolute;
 top: 50%;
+padding-left: calc(20vh + 10px);
 transform: translate(0%, -50%);
-margin-left: 110px;
-width: calc(100% - 125px);
+width: calc(100% - 20vh - 30px);
 overflow:hidden;
 }
 
+.tit:nth-of-type(2) {
+  opacity: 1;
+  animation: fadein 200s linear infinite;
+}
+
+.tit:nth-of-type(3) {
+  opacity: 0;
+  animation: fadein 200s linear infinite;
+  animation-delay: 20s;
+}
+
+.tit:nth-of-type(4) {
+  opacity: 0;
+  animation: fadein 200s linear infinite;
+  animation-delay: 40s;
+}
+
+.tit:nth-of-type(5) {
+  opacity: 0;
+  animation: fadein 200s linear infinite;
+  animation-delay: 60s;
+}
+
+.tit:nth-of-type(6) {
+  opacity: 0;
+  animation: fadein 200s linear infinite;
+  animation-delay: 80s;
+}
+
+.tit:nth-of-type(7) {
+  opacity: 0;
+  animation: fadein 200s linear infinite;
+  animation-delay: 100s;
+}
+
+.tit:nth-of-type(8) {
+  opacity: 0;
+  animation: fadein 200s linear infinite;
+  animation-delay: 120s;
+}
+
+.tit:nth-of-type(9) {
+  opacity: 0;
+  animation: fadein 200s linear infinite;
+  animation-delay: 140s;
+}
+
+.tit:nth-of-type(10) {
+  opacity: 0;
+  animation: fadein 200s linear infinite;
+  animation-delay: 160s;
+}
+
+.tit:nth-of-type(11) {
+  opacity: 0;
+  animation: fadein 200s linear infinite;
+  animation-delay: 180s;
+}
+
 .ambos2 {
- width: 97%;
-  height: auto;
+  width: 97%;
+  height: 70%;
   position: absolute;
-  margin-top: calc(100px + 3%);
+  top: 25%;
   margin-left: 0px;
   background: var(--fondodesc);
   border: var(--bordedesc);
-  box-shadow: var(--sombradesc);
-  border-radius: 3px;
+  border-radius: 4px;
 
 }
 
 .descripcion {
   width: 90%;
   height: auto;
+  position: absolute;
   font-family: "Manuale";
   line-height: 6.5vh;
   color: var(--tematexto);
   font-size: 3.5vh;
   text-align: justify;
-  padding: 5% 5% 2.5% 5%;
+  padding: 2.5% 2.5% 2.5% 5%;
+}
+
+.descripcion:nth-of-type(1) {
+  animation: fadein 200s linear infinite;
+  opacity: 1;
+}
+
+.descripcion:nth-of-type(2) {
+  opacity: 0;
+  animation: fadein 200s linear infinite;
+  animation-delay: 20s;
+}
+
+.descripcion:nth-of-type(3) {
+  opacity: 0;
+  animation: fadein 200s linear infinite;
+  animation-delay: 40s;
+}
+
+.descripcion:nth-of-type(4) {
+  opacity: 0;
+  animation: fadein 200s linear infinite;
+  animation-delay: 60s;
+}
+
+.descripcion:nth-of-type(5) {
+  opacity: 0;
+  animation: fadein 200s linear infinite;
+  animation-delay: 80s;
+}
+
+.descripcion:nth-of-type(6) {
+  opacity: 0;
+  animation: fadein 200s linear infinite;
+  animation-delay: 100s;
+}
+
+.descripcion:nth-of-type(7) {
+  opacity: 0;
+  animation: fadein 200s linear infinite;
+  animation-delay: 120s;
+}
+
+.descripcion:nth-of-type(8) {
+  opacity: 0;
+  animation: fadein 200s linear infinite;
+  animation-delay: 140s;
+}
+
+.descripcion:nth-of-type(9) {
+  opacity: 0;
+  animation: fadein 200s linear infinite;
+  animation-delay: 160s;
+}
+
+.descripcion:nth-of-type(10) {
+  opacity: 0;
+  animation: fadein 200s linear infinite;
+  animation-delay: 180s;
 }
 
 .tiemp {
 text-align: right;
 font-size: 3.5vh;
 line-height: 6.5vh;
-width: 90%;
 font-family: "Iceland";
 color: var(--temahora);
-padding: 2.5% 5% 5% 5%;
 }
 
 .noticia {
-  animation: fadein 200s linear infinite;
   position: absolute;
   width: 100%;
   height: 100%;
   background-color: transparent;
 }
 
-.noticia2 {
-  opacity: 0;
-  animation: fadein 200s linear infinite;
-  animation-delay: 20s;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: transparent;
-
-}
-
-.noticia3 {
-  opacity: 0;
-  animation: fadein 200s linear infinite;
-  animation-delay: 40s;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: transparent;
-
-}
-
-.noticia4 {
-  opacity: 0;
-  animation: fadein 200s linear infinite;
-  animation-delay: 60s;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: transparent;
-
-}
-
-.noticia5 {
-  opacity: 0;
-  animation: fadein 200s linear infinite;
-  animation-delay: 80s;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: transparent;
-
-}
-
-.noticia6 {
-  opacity: 0;
-  animation: fadein 200s linear infinite;
-  animation-delay: 100s;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: transparent;
-
-}
-
-.noticia7 {
-  opacity: 0;
-  animation: fadein 200s linear infinite;
-  animation-delay: 120s;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: transparent;
-
-}
-
-.noticia8 {
-  opacity: 0;
-  animation: fadein 200s linear infinite;
-  animation-delay: 140s;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: transparent;
-
-}
-
-.noticia9 {
-  opacity: 0;
-  animation: fadein 200s linear infinite;
-  animation-delay: 160s;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: transparent;
-
-}
-
-.noticia10 {
-  opacity: 0;
-  animation: fadein 200s linear infinite;
-  animation-delay: 180s;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: transparent;
-
-}
 </style>
 </head>
 <body>
@@ -232,228 +245,75 @@ padding: 2.5% 5% 5% 5%;
 
 <div class="ambos">
 <div class="imagen">
-<img width="100%" height="100%" src="../archivos/iconos/europapresslogo.png" style="border: solid 1px var(--temahora); box-shadow: var(--sombra); opacity: 0.85; border-radius: 3px;"></img>
+<img width="100%" height="100%" src="../archivos/iconos/elpaislogo.jpg" style="border: solid 1px var(--temahora); box-shadow: var(--sombra); opacity: 0.85; border-radius: 3px;"></img>
+</div>
+
+<div class="tit">
+Un muerto y varios heridos en una cadena de atentados terroristas en el centro de Viena
 </div>
 <div class="tit">
-Tenso duelo entre Abascal y Sánchez con calificativos de "mentiroso", "depredador sin valores" y "falso patriota"
+El fin de semana pasado ha sido el de más casos y muertes de la segunda ola
 </div>
+<div class="tit">
+La victoria de Trump y otras sorpresas posibles, según las encuestas
+</div>
+<div class="tit">
+Trump enfanga el proceso electoral al sugerir que los votos contados después del martes serán ilegítimos
+</div>
+<div class="tit">
+Estados Unidos cierra su campaña más anómala y hostil en un mar de incertidumbre
+</div>
+<div class="tit">
+Vídeo | Dentro de un mitin de Trump en Pensilvania
+</div>
+<div class="tit">
+Así se elige al presidente de Estados Unidos
+</div>
+<div class="tit">
+El Gobierno rechaza el confinamiento domiciliario solicitado por Asturias
+</div>
+<div class="tit">
+La Guardia Civil acusa a los empresarios impulsores del ‘procés’ de lucrarse con la pandemia
+</div>
+<div class="tit">
+Merkel advierte de que los hospitales se encaminan hacia una fase de “emergencia aguda”
+</div>
+
 </div>
 
 <div class="ambos2">
-<div id="contenedornot"><div id="efectonot"></div><div id="efectonot2"></div></div>
+
 <div class="descripcion">
-La moción de censura, en imágenes
+El diario ‘Kronen Zeitung’ apunta a que ha habido disparos cerca de una sinagoga<p class="tiemp">Lunes, 02 Nov 2020. 23:00:25h.</p>
 </div>
-<div class="tiemp">
-Miercoles, 21 Oct 2020. 15:08:53h.
-</div>
-</div>
-
-</div>
-
-<div class="noticia2">
-
-<div class="ambos">
-<div class="imagen">
-<img width="100%" height="100%" src="../archivos/iconos/europapresslogo.png" style="border: solid 1px var(--temahora); box-shadow: var(--sombra); opacity: 0.85; border-radius: 3px;"></img>
-</div>
-<div class="tit">
-Fin de la primera jornada de la moción de censura de Abascal tras más de 11 horas de debate
-</div>
-</div>
-
-<div class="ambos2">
-<div id="contenedornot"><div id="efectonot"></div><div id="efectonot2"></div></div>
 <div class="descripcion">
-La primera jornada de la moción de censura encabezada por el líder del Vox, Santiago Abascal, contra Pedro Sánchez ha finalizado poco antes de las nueve de la noche de este miércoles, después de más de onmce horas de debates.
+La detección de positivos mantiene un crecimiento por encima del 12% por segundo lunes<p class="tiemp">Lunes, 02 Nov 2020. 20:52:55h.</p>
 </div>
-<div class="tiemp">
-Miercoles, 21 Oct 2020. 18:58:57h.
-</div>
-</div>
-
-</div>
-
-<div class="noticia3">
-
-<div class="ambos">
-<div class="imagen">
-<img width="100%" height="100%" src="../archivos/iconos/europapresslogo.png" style="border: solid 1px var(--temahora); box-shadow: var(--sombra); opacity: 0.85; border-radius: 3px;"></img>
-</div>
-<div class="tit">
-Así te hemos contado en directo el primer día de la moción de censura de Vox
-</div>
-</div>
-
-<div class="ambos2">
-<div id="contenedornot"><div id="efectonot"></div><div id="efectonot2"></div></div>
 <div class="descripcion">
-El presidente de Vox, Santiago Abascal, ha pedido este miércoles apoyo al Congreso para convertirse en presidente del Gobierno y poder convocar elecciones por que, según ha dicho, "a los españoles se les ha acabado la paciencia" y hay que "devolverles la palabra" para que puedan juzgar los "meses de caos y ruina" a los que ha llevado al país el Ejecutivo de Pedro Sánchez.
+Un análisis de los resultados con un mapa Estado a Estado y los últimos datos de sondeos y predicciones<p class="tiemp">Lunes, 02 Nov 2020. 23:02:33h.</p>
 </div>
-<div class="tiemp">
-Miercoles, 21 Oct 2020. 05:59:31h.
-</div>
-</div>
-
-</div>
-
-<div class="noticia4">
-
-<div class="ambos">
-<div class="imagen">
-<img width="100%" height="100%" src="../archivos/iconos/europapresslogo.png" style="border: solid 1px var(--temahora); box-shadow: var(--sombra); opacity: 0.85; border-radius: 3px;"></img>
-</div>
-<div class="tit">
-El PP no concreta su voto en la moción pero arremete contra la iniciativa "inútil" y "falsaria" de Vox
-</div>
-</div>
-
-<div class="ambos2">
-<div id="contenedornot"><div id="efectonot"></div><div id="efectonot2"></div></div>
 <div class="descripcion">
-La moción de censura, en imágenes
+Los republicanos preparan el terreno para contestar el recuento y arrojan dudas sobre la validez del escrutinio del sufragio postal, mayoritariamente demócrata y disparado por la pandemia<p class="tiemp">Lunes, 02 Nov 2020. 20:23:05h.</p>
 </div>
-<div class="tiemp">
-Miercoles, 21 Oct 2020. 11:42:14h.
-</div>
-</div>
-
-</div>
-
-<div class="noticia5">
-
-<div class="ambos">
-<div class="imagen">
-<img width="100%" height="100%" src="../archivos/iconos/europapresslogo.png" style="border: solid 1px var(--temahora); box-shadow: var(--sombra); opacity: 0.85; border-radius: 3px;"></img>
-</div>
-<div class="tit">
-España supera el millón de contagios de Covid-19, 6.114 en las últimas 24 horas
-</div>
-</div>
-
-<div class="ambos2">
-<div id="contenedornot"><div id="efectonot"></div><div id="efectonot2"></div></div>
 <div class="descripcion">
-España ha alcanzado los 1.005.295 contagios de Covid-19 desde que comenzó de la pandemia, de los cuales 6.114 se han registrado en las últimas 24 horas, según el informe publicado este miércoles por el Ministerio de Sanidad, en el que no hay cifras actualizadas de la incidencia del coronavirus en el País Vasco por "problemas técnicos".
+Biden llega a la cita con las urnas aventajado en los sondeos respecto a un Trump que azuza el fantasma del fraude electoral<p class="tiemp">Lunes, 02 Nov 2020. 19:18:03h.</p>
 </div>
-<div class="tiemp">
-Miercoles, 21 Oct 2020. 16:51:16h.
-</div>
-</div>
-
-</div>
-
-<div class="noticia6">
-
-<div class="ambos">
-<div class="imagen">
-<img width="100%" height="100%" src="../archivos/iconos/europapresslogo.png" style="border: solid 1px var(--temahora); box-shadow: var(--sombra); opacity: 0.85; border-radius: 3px;"></img>
-</div>
-<div class="tit">
-Ayuso avanza que el viernes aprobará nuevas restricciones para Madrid y pone el foco en las fiestas nocturnas
-</div>
-</div>
-
-<div class="ambos2">
-<div id="contenedornot"><div id="efectonot"></div><div id="efectonot2"></div></div>
 <div class="descripcion">
-La presidenta de la Comunidad, Isabel Díaz Ayuso, ha avanzado que el viernes el Gobierno regional aprobará nuevas restricciones en Madrid que sustituirán a las que decaen el sábado con el estado de alarma y ha puesto el foco en que es necesario poner fin a las fiestas nocturnas.
+EL PAÍS asiste a uno de los últimos mítines del presidente de EE UU de esta campaña, 72 horas antes de la cita electoral<p class="tiemp">Lunes, 02 Nov 2020. 17:37:14h.</p>
 </div>
-<div class="tiemp">
-Miercoles, 21 Oct 2020. 12:02:58h.
-</div>
-</div>
-
-</div>
-
-<div class="noticia7">
-
-<div class="ambos">
-<div class="imagen">
-<img width="100%" height="100%" src="../archivos/iconos/europapresslogo.png" style="border: solid 1px var(--temahora); box-shadow: var(--sombra); opacity: 0.85; border-radius: 3px;"></img>
-</div>
-<div class="tit">
-El Papa defiende que los homosexuales tengan "derecho" a estar "cubiertos legalmente" y a "tener una familia"
-</div>
-</div>
-
-<div class="ambos2">
-<div id="contenedornot"><div id="efectonot"></div><div id="efectonot2"></div></div>
 <div class="descripcion">
-El Papa ha defendido que los homosexuales tengan "derecho" a estar "cubiertos legalmente" y a "tener una familia". El pontífice ha hecho estas declaraciones en el documental 'Francesco', dirigido por el ruso Evgeny Afineevsky, que se ha estrenado este 21 de octubre en el Festival de Cine de Roma.
+Las papeletas de los ciudadanos no deciden directamente quién será el jefe del Ejecutivo, sino que designan a los electores de cada Estado que votarán por uno de los candidatos<p class="tiemp">Lunes, 02 Nov 2020. 18:07:07h.</p>
 </div>
-<div class="tiemp">
-Miercoles, 21 Oct 2020. 15:22:57h.
-</div>
-</div>
-
-</div>
-
-<div class="noticia8">
-
-<div class="ambos">
-<div class="imagen">
-<img width="100%" height="100%" src="../archivos/iconos/europapresslogo.png" style="border: solid 1px var(--temahora); box-shadow: var(--sombra); opacity: 0.85; border-radius: 3px;"></img>
-</div>
-<div class="tit">
-Moción de censura al Real Madrid
-</div>
-</div>
-
-<div class="ambos2">
-<div id="contenedornot"><div id="efectonot"></div><div id="efectonot2"></div></div>
 <div class="descripcion">
-El Real Madrid hincó la rodilla ante el Shakhtar Donetsk (2-3) para comenzar, por primera vez en su historia, perdiendo en la Liga de Campeones, además de hipotecar el pase a la siguiente ronda y de afear aún más su imagen antes de disputar el 'Clásico' del próximo sábado.
+Illa confía en que funcionen las medidas impuestas tras el estado de alarma. El Principado cierra todas las actividades comerciales no esenciales<p class="tiemp">Lunes, 02 Nov 2020. 16:55:22h.</p>
 </div>
-<div class="tiemp">
-Miercoles, 21 Oct 2020. 19:04:37h.
-</div>
-</div>
-
-</div>
-
-<div class="noticia9">
-
-<div class="ambos">
-<div class="imagen">
-<img width="100%" height="100%" src="../archivos/iconos/europapresslogo.png" style="border: solid 1px var(--temahora); box-shadow: var(--sombra); opacity: 0.85; border-radius: 3px;"></img>
-</div>
-<div class="tit">
-El Consejo de Europa advierte a España que su reforma del CGPJ se aparta de las normas europeas
-</div>
-</div>
-
-<div class="ambos2">
-<div id="contenedornot"><div id="efectonot"></div><div id="efectonot2"></div></div>
 <div class="descripcion">
-Justicia responderá al GRECO para aclarar "inexactitudes" en sus informaciones
+David Madí (Junts) y Xavier Vendrell (ERC) utilizaron sus influencias para mediar en contratos vinculados a la lucha contra el coronavirus<p class="tiemp">Lunes, 02 Nov 2020. 20:18:56h.</p>
 </div>
-<div class="tiemp">
-Miercoles, 21 Oct 2020. 10:39:04h.
-</div>
-</div>
-
-</div>
-
-<div class="noticia10">
-
-<div class="ambos">
-<div class="imagen">
-<img width="100%" height="100%" src="../archivos/iconos/europapresslogo.png" style="border: solid 1px var(--temahora); box-shadow: var(--sombra); opacity: 0.85; border-radius: 3px;"></img>
-</div>
-<div class="tit">
-El Supremo aprecia falta de transparencia en las hipotecas con IRPH, pero no abusividad
-</div>
-</div>
-
-<div class="ambos2">
-<div id="contenedornot"><div id="efectonot"></div><div id="efectonot2"></div></div>
 <div class="descripcion">
-El Tribunal Supremo ha determinado que en las hipotecas ligadas al Índice de Referencia de los Préstamos Hipotecarios (IRPH) analizados existe falta de transparencia por no haberse informado de la evolución del mismo, pero no abusividad.
+La canciller alemana comparece para impulsar el cumplimiento del cierre parcial de la vida pública que entra hoy en vigor<p class="tiemp">Lunes, 02 Nov 2020. 17:08:50h.</p>
 </div>
-<div class="tiemp">
-Miercoles, 21 Oct 2020. 11:04:12h.
-</div>
+
 </div>
 
 </div>

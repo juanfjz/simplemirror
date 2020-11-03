@@ -26,8 +26,9 @@ GPIO.setup(BUTTON3, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 estadomonitor = 'encendido'
 
 SCOPES = ['https://www.googleapis.com/auth/calendar.readonly']
-conjunto = [""]
-eventop = [""]
+conjunto = []
+eventop = []
+eventop2 = []
 
 cuenta = 0
 numeronot = ''
@@ -152,7 +153,8 @@ def usarvariables():
     colorfinal = colorf[cuenta] + ','
     colorfinall = '(' + colorfinal + '1)'
     colorpri = '--colorpri: rgba(' + colorfinal + '1);'
-    colorpri2 = '--colorpri2: rgba(' + colorfinal + '0.2);'
+    colorpri01 = '--colorpri01: rgba(' + colorfinal + '0.1);'
+    colorpri06 = '--colorpri06: rgba(' + colorfinal + '0.6);'
     resplandor = '--resplandorentrada: 0px 0px 10px rgba(' + colorfinal + '0.8);'
     sombra = '--fc-today-bg-color: rgba(' + colorfinal + '0.4);'
     colornoti = '--temahora: rgba(' + colorfinal + '1);'
@@ -178,19 +180,23 @@ def usarvariables():
     replace_color('archivos/iconostiempo/termometro.svg', colorfinall)
     replace_color('archivos/iconostiempo/top.svg', colorfinall)
     replace_color('archivos/iconostiempo/uv.svg', colorfinall)
-    replace_color('archivos/iconostiempo/wind.svg', colorfinall)    
+    replace_color('archivos/iconostiempo/wind.svg', colorfinall)
+    replace_color('archivos/iconosev/calendario.svg', colorfinall)  
+    replace_color('archivos/iconosev/rel.svg', colorfinall)      
 
     replace_line('css/principal.css', 19, colorpri)
-    replace_line('css/principal.css', 20, colorpri2)
-    replace_line('css/principal.css', 27, resplandor)          
+    replace_line('css/principal.css', 20, colorpri01)
+    replace_line('css/principal.css', 23, resplandor)          
     replace_line('css/principal.css', 34, fondofinal)
     replace_line('css/calendario.css', 32, sombra)
-    replace_line('calendario/evento.html', 13, colorsec)            
+    replace_line('calendario/eventos.html', 9, colorpri)
+    replace_line('calendario/eventos.html', 10, colorpri01) 
+    replace_line('calendario/eventos.html', 11, colorpri06)     
     replace_line('scripts/tiempo.js', 2, latitudfinal) 
     replace_line('scripts/tiempo.js', 3, longitudfinal)
     replace_line('scripts/tiempo.js', 4, keyfinal)
-    replace_line('noticias/loading.html', 5, colorsec)          
-    replace_line('noticias/noticias.html', 13, colornoti)
+    replace_line('noticias/loading.html', 5, colorpri)          
+    replace_line('noticias/noticias.html', 11, colornoti)
     replace_line('tiempo/tiempo.html', 22, titulotiemfinal)
     subprocess.call (['xdotool', 'key', 'F7'])
     actualizanoticias(rssfinal, logofinal)
@@ -216,12 +222,11 @@ def actualizanoticias(rssfinal, logofinal):
             fecha.append(pubDate.text)
 
     imagen = '<img width="100%" height="100%" src="../archivos/iconos/' + logofinal + '" style="border: solid 1px var(--temahora); box-shadow: var(--sombra); opacity: 0.85; border-radius: 3px;"></img>';
+    replace_line('noticias/noticias.html', 248, imagen) 
 
     cuenta2 = 1
-    posimag = 235
-    postit = 238
-    posdes = 245
-    posfec = 248
+    postit = 252
+    posdes = 287
 
     while cuenta2 < 11:
         titulof = titulo[cuenta2]
@@ -260,16 +265,14 @@ def actualizanoticias(rssfinal, logofinal):
         fechaf = fechaf.replace("\r","")
         fechaf = fechaf.replace("\n","")
 
-        replace_line('noticias/noticias.html', posimag, imagen) 
+        descripciontotal = descripcionf + '<p class="tiemp">' + fechaf + '</p>'
+
         replace_line('noticias/noticias.html', postit, titulof)
-        replace_line('noticias/noticias.html', posdes, descripcionf)    
-        replace_line('noticias/noticias.html', posfec, fechaf) 
+        replace_line('noticias/noticias.html', posdes, descripciontotal)    
 
         cuenta2+=1
-        posimag = posimag + 23
-        postit = postit + 23
-        posdes = posdes + 23
-        posfec = posfec + 23    
+        postit = postit + 3
+        posdes = posdes + 3  
         
 def actualizacal():
     creds = None
@@ -296,14 +299,21 @@ def actualizacal():
     # Call the Calendar API
     now = datetime.datetime.utcnow().isoformat() + 'Z' # 'Z' indicates UTC time
     events_result = service.events().list(calendarId='primary', timeMin=now,
-                                        maxResults=10, singleEvents=True,
+                                        maxResults=31, singleEvents=True,
                                         orderBy='startTime').execute()
     events = events_result.get('items', [])
-
-    if not events:
-        print('No upcoming events found.')
     
-    global conjunto  
+    nohayeve = '--activa0evento: block;'
+    nohayeve2 = '--activa00evento: none;'
+    
+    if not events:
+        replace_line('calendario/eventos.html', 12, nohayeve)
+        replace_line('calendario/eventos.html', 13, nohayeve2)
+    
+    global conjunto 
+    global eventop
+    global eventop2    
+    contador3 = 1
     
     for event in events:
         fecha = event['start'].get('dateTime', event['start'].get('date'))
@@ -320,41 +330,196 @@ def actualizacal():
         ano = fecha[0:4]
         dia = fecha[8:10]
         mesito = fecha[5:7]
+        hora = fecha[11:16]
         if mesito == '01':
-            mes = 'Enero'
+            mes = 'Ene'
         if mesito == '02':
-            mes = 'Febrero'
+            mes = 'Feb'
         if mesito == '03':
-            mes = 'Marzo'
+            mes = 'Mar'
         if mesito == '04':
-            mes = 'Abril'
+            mes = 'Abr'
         if mesito == '05':
-            mes = 'Mayo'
+            mes = 'May'
         if mesito == '06':
-            mes = 'Junio'
+            mes = 'Jun'
         if mesito == '07':
-            mes = 'Julio'
+            mes = 'Jul'
         if mesito == '08':
-            mes = 'Agosto'   
+            mes = 'Ago'   
         if mesito == '09':
-            mes = 'Septiembre'
+            mes = 'Sep'
         if mesito == '10':
-            mes = 'Octubre'
+            mes = 'Oct'
         if mesito == '11':
-            mes = 'Noviembre'
+            mes = 'Nov'
         if mesito == '12':
-            mes = 'Diciembre'               
-        fechaguay = dia + ' de ' + mes + ' de ' + ano
-        texto2 = '<div id="general"><div id="eventin">' + tituloge + '</div><div id="fechaeventin">' + fechaguay + '</div></div>'
-        global eventop
+            mes = 'Dic'               
+        ano2 = int(ano)
+        mesito2 = int(mesito)
+        dia2 = int(dia)
+        ditt = datetime.date(ano2, mesito2, dia2)
+        ditt2 = ditt.isocalendar()[2]
+        if ditt2 == 1:
+            diasem = 'Lunes'
+        if ditt2 == 2:
+            diasem = 'Martes'
+        if ditt2 == 3:
+            diasem = 'Miercoles'
+        if ditt2 == 4:
+            diasem = 'Jueves'
+        if ditt2 == 5:
+            diasem = 'Viernes'
+        if ditt2 == 6:
+            diasem = 'Sabado'
+        if ditt2 == 7:
+            diasem = 'Domingo'
+            
+        fechaguay = diasem + ', ' + dia + ' ' + mes + ' ' + ano + ' a las ' + hora + 'h.'
+        if not hora:
+            fechaguay = diasem + ', ' + dia + ' ' + mes + ' ' + ano + '.'
+            
+        texto2 = '<div class="texto11"><div class="centrado">' + tituloge + '</div></div>'
+        texto3 = '<div class="texto22"><div class="centrado">' + fechaguay + '</div></div>'
+        if contador3 == 1:
+            texto2 = '<div class="texto1"><div class="centrado">' + tituloge + '</div></div>'
+            texto3 = '<div class="texto2"><div class="centrado">' + fechaguay + '</div></div>'
+        
         conjunto.append(texto)
-        eventop.append(texto2)        
+        eventop.append(texto2)
+        eventop2.append(texto3)
+        contador3+=1        
+    
+    numeroeventos = len(eventop)
+
+    imaeven1 = '<div class="imagen11"><div class="centrado"><img src="../archivos/iconosev/calendario.svg" width="30%" style="margin-left: 35%;"></div></div>'
+    imaeven2 = '<div class="imagen22"><div class="centrado"><img src="../archivos/iconosev/rel.svg" width="30%" style="margin-left: 35%;"></div></div>'
+    
+    solo1eve1 = '--activa0evento: none;'
+    solo1eve2 = '--activa00evento: block;'
+    solo1eve3 = '--activa1evento: block;'
+    solo1eve4 = '--activa11evento: none;'
+ 
+    masdeuno1 = '--activa0evento: none;'
+    masdeuno2 = '--activa00evento: block;'
+    masdeuno3 = '--activa1evento: none;'
+    masdeuno4 = '--activa11evento: block;'
+ 
+    abiso = '<div class="aviso"><div class="centrado">No hay mas eventos que mostrar</div></div>'
+    hueco = ' '
+
+    doseves1 = '--opacidad2: 0.5;' 
+    doseves2 = '--opacidad3: 0.3;' 
+    doseves3 = '--opacidad4: 0.3;'
+
+    treseves1 = '--opacidad2: 1;' 
+    treseves2 = '--opacidad3: 0.5;' 
+    treseves3 = '--opacidad4: 0.3;'
+
+    cuatroeves1 = '--opacidad2: 1;' 
+    cuatroeves2 = '--opacidad3: 1;' 
+    cuatroeves3 = '--opacidad4: 0.5;'
+ 
+    cincoeves1 = '--opacidad2: 1;' 
+    cincoeves2 = '--opacidad3: 1;' 
+    cincoeves3 = '--opacidad4: 1;'
+ 
+    if numeroeventos > 0:
+        evento1 = eventop[0]
+        evento1f = eventop2[0]
+        replace_line('calendario/eventos.html', 245, evento1)
+        replace_line('calendario/eventos.html', 247, evento1f)
+        replace_line('calendario/eventos.html', 12, solo1eve1)
+        replace_line('calendario/eventos.html', 13, solo1eve2)        
+        replace_line('calendario/eventos.html', 14, solo1eve3)
+        replace_line('calendario/eventos.html', 15, solo1eve4)
+    if numeroeventos > 1:
+        evento2 = eventop[1]
+        evento2f = eventop2[1]
+        replace_line('calendario/eventos.html', 255, imaeven1)
+        replace_line('calendario/eventos.html', 256, evento2)
+        replace_line('calendario/eventos.html', 257, imaeven2)
+        replace_line('calendario/eventos.html', 258, evento2f)
+        replace_line('calendario/eventos.html', 12, masdeuno1)
+        replace_line('calendario/eventos.html', 13, masdeuno2)        
+        replace_line('calendario/eventos.html', 14, masdeuno3)
+        replace_line('calendario/eventos.html', 15, masdeuno4)
+        replace_line('calendario/eventos.html', 17, doseves1)
+        replace_line('calendario/eventos.html', 18, doseves2)        
+        replace_line('calendario/eventos.html', 19, doseves3)
+        replace_line('calendario/eventos.html', 263, abiso)
+        replace_line('calendario/eventos.html', 262, hueco)
+        replace_line('calendario/eventos.html', 264, hueco)        
+        replace_line('calendario/eventos.html', 265, hueco)
+        replace_line('calendario/eventos.html', 270, hueco)
+        replace_line('calendario/eventos.html', 269, hueco)
+        replace_line('calendario/eventos.html', 271, hueco)        
+        replace_line('calendario/eventos.html', 272, hueco) 
+        replace_line('calendario/eventos.html', 278, hueco)
+        replace_line('calendario/eventos.html', 277, hueco)
+        replace_line('calendario/eventos.html', 279, hueco)        
+        replace_line('calendario/eventos.html', 280, hueco) 
+                        
+    if numeroeventos > 2:
+        evento3 = eventop[2]
+        evento3f = eventop2[2]
+        replace_line('calendario/eventos.html', 262, imaeven1)
+        replace_line('calendario/eventos.html', 263, evento3)
+        replace_line('calendario/eventos.html', 264, imaeven2)
+        replace_line('calendario/eventos.html', 265, evento3f)       
+        replace_line('calendario/eventos.html', 12, masdeuno1)
+        replace_line('calendario/eventos.html', 13, masdeuno2)        
+        replace_line('calendario/eventos.html', 14, masdeuno3)
+        replace_line('calendario/eventos.html', 15, masdeuno4)  
+        replace_line('calendario/eventos.html', 17, treseves1)
+        replace_line('calendario/eventos.html', 18, treseves2)        
+        replace_line('calendario/eventos.html', 19, treseves3)
+        replace_line('calendario/eventos.html', 270, abiso)
+        replace_line('calendario/eventos.html', 269, hueco)
+        replace_line('calendario/eventos.html', 271, hueco)        
+        replace_line('calendario/eventos.html', 272, hueco)
+        replace_line('calendario/eventos.html', 278, hueco)
+        replace_line('calendario/eventos.html', 277, hueco)
+        replace_line('calendario/eventos.html', 279, hueco)        
+        replace_line('calendario/eventos.html', 280, hueco) 
+                 
+    if numeroeventos > 3:
+        evento4 = eventop[3]
+        evento4f = eventop2[3]
+        replace_line('calendario/eventos.html', 269, imaeven1)
+        replace_line('calendario/eventos.html', 270, evento4)
+        replace_line('calendario/eventos.html', 271, imaeven2)
+        replace_line('calendario/eventos.html', 272, evento4f)
+        replace_line('calendario/eventos.html', 12, masdeuno1)
+        replace_line('calendario/eventos.html', 13, masdeuno2)        
+        replace_line('calendario/eventos.html', 14, masdeuno3)
+        replace_line('calendario/eventos.html', 15, masdeuno4)  
+        replace_line('calendario/eventos.html', 17, cuatroeves1)
+        replace_line('calendario/eventos.html', 18, cuatroeves2)        
+        replace_line('calendario/eventos.html', 19, cuatroeves3)
+        replace_line('calendario/eventos.html', 278, abiso)
+        replace_line('calendario/eventos.html', 277, hueco)
+        replace_line('calendario/eventos.html', 279, hueco)        
+        replace_line('calendario/eventos.html', 280, hueco) 
+    if numeroeventos > 4:
+        evento5 = eventop[4]
+        evento5f = eventop2[4]
+        replace_line('calendario/eventos.html', 277, imaeven1)
+        replace_line('calendario/eventos.html', 278, evento5)
+        replace_line('calendario/eventos.html', 279, imaeven2)
+        replace_line('calendario/eventos.html', 280, evento5f)
+        replace_line('calendario/eventos.html', 12, masdeuno1)
+        replace_line('calendario/eventos.html', 13, masdeuno2)        
+        replace_line('calendario/eventos.html', 14, masdeuno3)
+        replace_line('calendario/eventos.html', 15, masdeuno4)
+        replace_line('calendario/eventos.html', 17, cincoeves1)
+        replace_line('calendario/eventos.html', 18, cincoeves2)        
+        replace_line('calendario/eventos.html', 19, cincoeves3)        
         
     conjunto2 = listToString(conjunto)
-    evento1 = eventop[1]
     replace_line('calendario/calendario.html', 18, conjunto2)
-    conjunto = [""]
-    replace_line('calendario/evento.html', 49, evento1)
+    conjunto = []
+    contador3 = 1
     
 
 def signal_handler(sig, frame):
@@ -384,8 +549,10 @@ def boton3(channel):
     subprocess.call (['shutdown', '-h', 'now'])
 
 if __name__ == '__main__':
-    energia.start()
+    leervariables()
+    usarvariables()
     actualizacal()
+    energia.start()
     GPIO.add_event_detect(BUTTON1, GPIO.FALLING, callback=boton1, bouncetime=300)
     GPIO.add_event_detect(BUTTON2, GPIO.FALLING, callback=boton2, bouncetime=300)
     GPIO.add_event_detect(BUTTON3, GPIO.FALLING, callback=boton3, bouncetime=300)    

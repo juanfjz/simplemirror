@@ -43,58 +43,41 @@ function keyDownTextField(e) {
    </HEAD>
   <BODY>
 <div id="fondo"></div>
-<div id="calendario">
-<div id="menu"><div id="contengoentradas"><div class="entrada">L</div><div class="entrada">M</div><div class="entrada">X</div><div class="entrada">J</div><div class="entrada">V</div><div class="entrada">S</div><div class="entrada">D</div></div></div>
-<iframe src="calendario/calendario.html" id="iframecal" frameBorder="0" scrolling="no" width="100%" height="87.5%" style="z-index:10; top: 12.5%; position: absolute;"></iframe>
-</div>
+<script src='scripts/jquery-3.2.1.min.js'></script><script  src="scripts/reloj.js"></script>
 
-<div id="inferior">
-  <div class="block1">
-    <img class="ratio--height-to-width" 
-    src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'&gt;&lt;/svg&gt;">
-    <div class="block-content"><div id="tituloagenda">
-<div class="efecto"></div>
-<div class="centrado">Proximo<br><div class="colorespe">evento</div></div>
-</div></div>
-  </div>
-
-  <div class="block2">
-    <img class="ratio--height-to-width" 
-    src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'&gt;&lt;/svg&gt;">
-    <div class="block-content"><div id="agenda">
-<div class="efecto2"></div>
-<div class="centrado"><iframe src="calendario/evento.html" id="iframeeven" frameBorder="0" scrolling="no" width="100%" height="100%" style="z-index:10;"></iframe></div>
-</div></div>
-  </div>
-  
-   <div class="block3">
-    <img class="ratio--height-to-width" 
-    src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'&gt;&lt;/svg&gt;">
-    <div class="block-content"><div id="reloj">
-<div class="efectol"></div>
+<div id="reloj">
+<div class="circulo"></div><div class="circulo2"></div>
 <div class="centrado">  
 <div id="horita">
-      <text id="horas" class="time"></text><text class="time">:</text><text id="minutos" class="time"></text><text class="time">:</text> <text id="segundos" class="time2"></text>
+      <text id="horas" class="time"></text><text class="time">:</text><text id="minutos" class="time"></text><text class="time">:</text><text id="segundos" class="time2"></text>
 </div>
  <div id="fechita">
-     <text class="date" id="diaSemana"></text><text class="date">,<br></text><text id="dia" class="date"></text><text class="date"> de </text><text id="mes" class="date"></text><text class="date"> de </text><text id="anio" class="date"></text>
+     <text id="diaSemana"></text>,<text id="dia"></text> de <text id="mes"></text><br>de <text id="anio"></text>
 </div>
-<script src='scripts/jquery-3.2.1.min.js'></script><script  src="scripts/reloj.js"></script>
 </div>
-</div></div>
-  </div>
-  
 </div>
 
+<div id="calendario">
+<div id="menu"><div id="contengoentradas"><div class="entrada">L</div><div class="entrada">M</div><div class="entrada">X</div><div class="entrada">J</div><div class="entrada">V</div><div class="entrada">S</div><div class="entrada">D</div></div></div>
+<iframe src="calendario/calendario.html" id="iframecal" frameBorder="0" scrolling="no" width="98%" height="85.5%" style="z-index:10; left: 1%; top: 12.5%; position: absolute;"></iframe>
+</div>
+
+<div id="tituloagenda">
+<div class="centrado">Proximos Eventos</div>
+</div>
+
+<div id="agenda">
+<iframe src="calendario/eventos.html" id="iframeeven" frameBorder="0" scrolling="no" width="100%" height="100%" style="z-index:10;"></iframe>
+</div>
 
 <div id="tiempo">
 <iframe src="tiempo/tiempo.html" id="iframetie" frameBorder="0" scrolling="no" width="100%" height="100%" style="z-index:10;"></iframe>
 </div>
 
-
 <div id="titulonoticias">
 <div class="centrado">Noticias</div>
 </div>
+
 <div id="noticias">
 <iframe src="noticias/noticias.html" id="iframenoti" frameBorder="0" scrolling="no" width="100%" height="100%" style="z-index:10;"></iframe>
 </div>

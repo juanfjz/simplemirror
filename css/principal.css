@@ -16,27 +16,23 @@
 }
 :root{
 --colortitulos: rgba(255,255,255,1);
---colorpri: rgba(175,255,250,1);
---colorpri2: rgba(175,255,250,0.2);
-
---gradientemenu: linear-gradient(0deg, rgba(255,255,200,0) 0%, rgba(255,255,200,0) 100%);
---sombramenucal: inset 0px 0px 1px 1px rgba(255,255,255,0);
---bordeentradas: solid 1px rgba(213,213,213,0);
+--colorpri: rgba(210,210,210,1);
+--colorpri01: rgba(210,210,210,0.1);
 
 --tamanoentrada: 28px;
---resplandorentrada: 0px 0px 10px rgba(175,255,250,0.8);
+--resplandorentrada: 0px 0px 10px rgba(210,210,210,0.8);
 
 --colorhora: rgba(255, 255, 255, 1);
 
 --sombrageneral: 0px 0px 20px 5px rgba(200,200,200,0.4);
---sombraesp3: inset 0px 0px 5px 2px rgba(200,200,200,0.4), inset 0px 0px 15px 2px var(--colorpri);
 --opacidadg: rgba(0,0,0,0.3);
 --fondod: url("../archivos/fondos/fondo2.jpg");
 
---tamanop: 1.2vw;
+--tamanop: 1.3vw;
+--tamanopp: 0.7vw;
 --tamanotit: 3vh;
---tamanom: 2.7vw;
---tamanog: 4.5vw;
+--fondod: url("../archivos/fondos/fondo1.jpg");
+--tamanog: 1.8vw;
 }
 
  body { 
@@ -52,7 +48,7 @@
 	
 #fondo{
 	width: 105%;
-  height: 105%;
+    height: 105%;
 	z-index:1;
 	overflow: hidden;
 	background: var(--opacidadg);
@@ -61,252 +57,36 @@
 	margin-left: -2.5%;
 }
 
-    #calendario {
-    width: 48vw;
-    height: 50vh;
-    left: 3vw;
-    top: 4vh;
-    position:absolute;
-    z-index:1;
-    box-shadow: var(--sombrageneral);
-} 
-
-    #inferior {
-    width: 48vw;
-    height: 46vh;
-    left: 3vw;
-    top: 54vh;
-    position:absolute;
-    z-index:1;
-} 
-
-#menu{
-width: 100%;
-height: 20%;
-box-shadow: var(--sombramenucal);
-background: var(--gradientemenu);
-z-index: 10;
-overflow: hidden;
-}
-
-#contengoentradas{
-position: absolute;
-width: 87%;
-margin-left: 6%;
-top: 5%;
-border-bottom: var(--bordeentradas);
-}
-
-.entrada{
-font-size: var(--tamanom);
-color: var(--colorpri);
-text-shadow: var(--resplandorentrada);
-display: inline-block;
-text-align: center;
-width: 14.28%;
-}
-    #tiempo {
-    width: 43vw;
-    height: 40vh;
-    left: 54vw;
-    top: 4vh;
-    position:absolute;
-    z-index:1;
-    box-shadow: var(--sombrageneral);
-} 
-
-    #agenda {
-    width: 100%;
-    height: 100%;
+#reloj {
+    width: 10vw;
+    height: 10vw;
     position:absolute;
     z-index:2;
-    text-align: center;
-    border-radius: 50%;
-
+	top: calc(50% - 5vw);
+	left: 45vw;
+	text-align: center;
+	border-radius: 50%;
 } 
 
-    #tituloagenda {
-    width: 100%;
-    height: 100%;
-    font-size: var(--tamanotit);
-    position:absolute;
-    z-index:5;
-    text-align: center;
-    color: var(--colortitulos);
-    border-radius: 50%;
-
-} 
-
-.block1 {
-  display: inline-block;
-  position: relative;
-  margin-left: 1%;
-  max-width: 31vh;
-  background: transparent;
-  width: 20%;
-  vertical-align: top;
-  top: 35%;
-  transform: translateY(-50%);
-}
-
-.block2 {
-  display: inline-block;
-  position: relative;
-  margin-left: 0%;
-  margin-right: 1.5%;
-  max-width: 38vh;
-  background: transparent;
-  width: 30%;
-  vertical-align: top;
-  top: 60%;
-  transform: translateY(-50%);
-}
-
-.block3 {
-  display: inline-block;
-  position: relative;
-  margin-right: 1%;
-  max-width: 42vh;
-  background: transparent;
-  width: 42%;
-  vertical-align: top;
-  top: 49%;
-  transform: translateY(-50%);
-}
-
-.block-content {
-  position: absolute; 
-  top: 0; 
-  left: 0; 
-  right: 0; 
-  bottom: 0; 
-  display: flex; 
-  justify-content: center; 
-  align-items: center;
-}
-
-.ratio--width-to-height {
-  height: 100%; 
-  width: auto;
-}
-
-.ratio--height-to-width {
-  height: auto; 
-  width: 100%;
-}
-
-   .efecto {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    box-shadow: -3px 0px 3px 1px var(--colorpri), 3px 0px 3px 1px var(--colorpri2);
-    z-index:90;
-    border-radius: 50%;   
-    position:absolute; 
-    animation: rota 4s linear infinite;
-}
-
-   .efecto2 {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    box-shadow: -3px 0px 3px 1px var(--colorpri), 3px 0px 3px 1px var(--colorpri2);
-    z-index:90;
-    border-radius: 50%;   
-    position:absolute; 
-    animation: rota2 4s linear infinite;
-}
-
-    #titulonoticias {
-    width: 8vw;
-    height: 3vh;
-    font-size: var(--tamanotit);
-    left: 71.5vw;
-    top: 49vh;
-    position:absolute;
-    z-index:5;
-    text-align: center;
-    color: var(--colorpri);
-
-} 
-
-.colorespe {color: var(--colorpri);}
-
-@keyframes rota {
-  0% {
-      transform: rotate(0deg);
-  }
-  100% {
-      transform: rotate(360deg);
-  }
-}
-
-@keyframes rota2 {
-  0% {
-      transform: rotate(0deg);
-  }
-  100% {
-      transform: rotate(-360deg);
-  }
-}
-
-   .centrado{
-	position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-
-   }
-
-
-    #noticias {
-    width: 43vw;
-    height: 45vh;
-    left: 54vw;
-    top: 53vh;
-    position:absolute;
-    z-index:1;
-
-} 
-
-
-    #reloj {
-    width: 100%;
-    height: 100%;
-    position:absolute;
-    z-index:1;
-    box-shadow: var(--sombraesp3);
-    border-radius: 50%;
-} 
-
-    #horita {
+#fechita {
     height: var(--tamanog);
     z-index:2;
     width: 100%;
     text-align: center;
-
+	font-family: 'Iceland';
+    color: var(--colorpri);
+    font-size: var(--tamanopp);
 } 
-    #fechita {
-    height: var(--tamanom);
+
+#horita {
+    height: var(--tamanog);
     z-index:2;
     width: 100%;
     text-align: center;
-    padding-top: 0.5vh;
 } 
 
-@keyframes glow {
-   0% {
-    box-shadow: var(--sombraflecha1);
-    }
-  50% {
-	box-shadow: var(--sombraflecha2);
-    }
-   100% {
-	box-shadow: var(--sombraflecha3);
-    }
-}
-
 .time {
-font-family: 'Iceland';
+  font-family: 'Iceland';
   color: var(--colorhora);
   letter-spacing: 0.02em;
   font-size: var(--tamanog);
@@ -316,13 +96,138 @@ font-family: 'Iceland';
 font-family: 'Iceland';
   color: var(--colorpri);
   letter-spacing: 0.02em;
-  font-size: var(--tamanom);
+  font-size: var(--tamanog);
 }
 
-.date {
-  font-family: 'Iceland';
-  color: var(--colorpri);
-  letter-spacing: 0.02em;
-  font-size: var(--tamanop);
+#calendario {
+    width: 40vw;
+    height: 41vh;
+    left: 2vw;
+    top: 4vh;
+    position:absolute;
+    z-index:1;
+	border: 1px solid rgba(200,200,200,0.1);
+	border-radius: 4px;
+	background: linear-gradient(0deg, rgba(200,200,200,0.1) 10%, rgba(200,200,200,0.1) 50%);
+	
+} 
+
+#menu{
+width: 100%;
+height: 15%;
+z-index: 10;
+overflow: hidden;
 }
 
+#contengoentradas{
+position: relative;
+width: 98%;
+height: var(--tamanotit);
+left: 1%;
+top: calc((100% - var(--tamanotit)) / 2)
+}
+
+.entrada{
+font-size: var(--tamanotit);
+color: var(--colorpri);
+text-shadow: var(--resplandorentrada);
+display: inline-block;
+text-align: center;
+width: 14.2857%;
+}
+
+#tiempo {
+    width: 41.3vw;
+    height: 46.5vh;
+    left: 57.3vw;
+    top: 1vh;
+    position:absolute;
+    z-index:1;
+} 
+
+#titulonoticias {
+    width: 16vw;
+    height: 3vh;
+    font-size: var(--tamanotit);
+    left: 70vw;
+    top: calc(50vh - (var(--tamanotit) / 2));
+    position:absolute;
+    z-index:5;
+    text-align: center;
+    color: var(--colorpri);
+} 
+
+#noticias {
+    width: 41.2vw;
+    height: 42.7vh;
+    left: 57.5vw;
+    top: 54.3vh;
+    position:absolute;
+    z-index:1;
+} 
+
+#agenda {
+    width: 40vw;
+    height: 42vh;
+    left: 2vw;
+    top: 55vh;
+    position:absolute;
+    z-index:2;
+    text-align: center;
+} 
+
+#tituloagenda {
+    width: 20vw;
+    height: 3vh;
+    font-size: var(--tamanotit);
+    left: 12vw;
+    top: calc(50vh - (var(--tamanotit) / 2));
+    position:absolute;
+    z-index:5;
+    text-align: center;
+    color: var(--colorpri);
+} 
+
+.circulo {
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: transparent;
+    position: absolute;
+    box-shadow: 0px 0px 30px 5px var(--colorpri);
+    border-radius: 50%;
+    filter: blur(1px);
+}
+
+.circulo2 {
+    width: 95%;
+    height: 95%;
+	margin-top: 2.5%;
+	margin-left: 2.5%;
+	border-radius: 50%;
+	border-top: 1px solid var(--colorpri);
+	border-bottom: 1px solid var(--colorpri);
+	border-left: 1px solid transparent;
+	border-right: 1px solid transparent;
+    z-index:10;
+	animation: spin 2s linear infinite;
+	background-color: transparent;
+	position: absolute;
+	filter: blur(1.3px);
+}
+
+.centrado{
+	position: relative;
+    top: 50%;
+    transform: translatey(-40%);
+
+}
+
+@keyframes spin {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}

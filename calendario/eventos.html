@@ -1,0 +1,286 @@
+<html>
+<head>
+<style type="text/css">
+@font-face {
+  font-family: "Iceland";
+  src: url("../archivos/fuentes/iceland.ttf") format("truetype");
+}
+:root{
+--colorpri: rgba(210,210,210,1);
+--colorpri01: rgba(210,210,210,0.1);
+--colorpri06: rgba(210,210,210,0.6);
+--activa0evento: none;
+--activa00evento: block;
+--activa1evento: none; 
+--activa11evento: block; 
+
+--opacidad2: 1; 
+--opacidad3: 1; 
+--opacidad4: 1;  
+} 
+
+body {
+  background-color: transparent;
+  cursor: none;
+}
+
+#contenedor{
+	width: calc(100vw - 2px);
+	height: calc(100vh - 2px);
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: var(--activa00evento);
+}
+
+.centrado{
+	top: 50%;
+	position: relative;
+	transform: translatey(-50%);
+}
+
+  .principal {
+	width: 100%;
+	height: 21.1%;
+	position: absolute;
+	left: 0;
+	overflow: hidden;
+	font-size: 3vw;
+    border: 1px solid var(--colorpri01);
+	border-radius: 4px;
+	background: linear-gradient(0deg, var(--colorpri01) 10%, var(--colorpri01) 70%);
+	animation: pulsa2 2s alternate infinite;
+}	
+
+  .secun {
+	width: 46%;
+	height: 29%;
+	overflow: hidden;
+	border: 1px solid rgba(200,200,200,0.1);
+	border-radius: 4px;
+	background: linear-gradient(0deg, rgba(200,200,200,0.1) 10%, rgba(200,200,200,0.1) 70%);
+	padding-top: 2.5%;
+	padding-right: 2.5%;
+	padding-bottom: 3.5%;
+	display: block;
+	font-size: 2.4vw;
+}	
+
+  .secun:nth-of-type(even) {
+	float: right;
+}
+
+  .secun:nth-of-type(odd) {
+	float: left;
+}
+
+  .secun:nth-of-type(n+3) {
+	margin-top: 2.5%;
+}
+  .secun:nth-of-type(2) {
+	opacity: var(--opacidad2);
+}
+  .secun:nth-of-type(3) {
+	opacity: var(--opacidad3);
+}
+
+  .secun:nth-of-type(4) {
+	opacity: var(--opacidad4);
+}
+ 
+ .secundarios {
+	width: 100%;
+	height: 74%;
+	position: absolute;
+	top: 26%;
+	left: 0;
+	display: var(--activa11evento);
+}
+
+  .imagen1 { 
+    position: relative;
+	width: calc(10% - 2px);
+	height: calc(100% - 2px);
+    overflow: hidden; 
+    display: block; float: left;
+}
+
+  .texto1 { 
+    position: relative;
+    font-family: 'Iceland';
+	width: 35%;
+	padding-left: 2.5%;
+	padding-right: 2.5%;
+	height: 100%;
+    color: rgba(255,255,255,1);
+    overflow: hidden; 
+    display: block; float: left;
+}
+
+  .imagen2 { 
+    position: relative;
+	width: calc(10% - 2px);
+	height: calc(100% - 2px);
+	margin-left: 1%;
+    overflow: hidden; 
+    display: block; float: left;
+}
+
+  .texto2 {
+    position: relative;
+    font-family: 'Iceland';
+    color:  rgba(255,255,255,1);
+	width: 34%;
+	padding-left: 2.5%;
+	padding-right: 2.5%;
+	height: 100%;
+	overflow: hidden; 
+	display: block; float: left;
+	vertical-align: middle;
+}
+
+  .imagen11 { 
+    position: relative;
+	width: 20%;
+	height: 48.5%;
+    overflow: hidden; 
+    display: block; float: left;
+}
+
+  .texto11 { 
+    position: relative;
+    font-family: 'Iceland';
+	width: 80%;
+	height: 48.5%;
+    color: rgba(255,255,255,1);
+    overflow: hidden; 
+    display: block; float: left;
+}
+
+  .imagen22 { 
+    position: relative;
+	width: 20%;
+	margin-top: 3%;
+	height: 48.5%;
+    overflow: hidden; 
+    display: block; float: left;
+}
+
+  .texto22 {
+    position: relative;
+    font-family: 'Iceland';
+    color: rgba(255,255,255,1);
+	width: 80%;
+	margin-top: 3%;
+	height: 48.5%;
+	overflow: hidden; 
+	display: block; float: left;
+}
+
+
+#noeven {
+	width: calc(100% - 2px);
+	height: calc(100% - 2px);
+	position: absolute;
+	top: 0;
+	left: 0;
+	text-align: center;
+	color: var(--colorpri06);
+	border: 1px solid rgba(200,200,200,0.1);
+	border-radius: 4px;
+	background: linear-gradient(0deg, rgba(200,200,200,0.1) 10%, rgba(200,200,200,0.1) 70%);
+	font-size: 4vw;
+	font-family: 'Iceland';
+	display: var(--activa0evento);
+	z-index: 200;
+}
+
+#uneven {
+	width: calc(100% - 2px);
+	height: calc(74% - 2px);
+	position: relative;
+	top: 26%;
+	left: 0;
+	text-align: center;
+	color: var(--colorpri06);
+	border: 1px solid rgba(200,200,200,0.1);
+	border-radius: 4px;
+	background: linear-gradient(0deg, rgba(200,200,200,0.1) 10%, rgba(200,200,200,0.1) 70%);
+	font-size: 4vw;
+	font-family: 'Iceland';
+	display: var(--activa1evento);
+	z-index: 200;
+}
+
+.aviso {
+	width: calc(100% - 2px);
+	height: calc(100% - 2px);
+	position: relative;
+	top: 0;
+	left: 0;
+	text-align: center;
+	color: var(--colorpri06);
+	font-size: 4vw;
+	font-family: 'Iceland';
+
+	z-index: 200;
+}
+
+@keyframes pulsa2 {
+  0% {
+border: 1px solid var(--colorpri01);
+  }
+  100% {
+border: 1px solid var(--colorpri06);
+	  
+  }
+}
+</style>
+</head>
+<body>
+<div id="noeven"><div class="centrado">No hay ningun evento que mostrar</div></div>
+<div id="contenedor">
+<div class="principal">
+<div class="imagen1"><div class="centrado"><img src="../archivos/iconosev/calendario.svg" width="60%" style="margin-left: 20%;"></div></div>
+<div class="texto1"><div class="centrado">Este es el titulo muy largo del evento de hoy, max 50 letras.</div></div>
+<div class="imagen2"><div class="centrado"><img src="../archivos/iconosev/rel.svg" width="60%" style="margin-left: 20%;"></div></div>
+<div class="texto2"><div class="centrado">Sabado, 11 Nov 2020 a las 14:00h.</div></div>
+</div>
+
+<div id="uneven"><div class="centrado">No hay mas eventos que mostrar</div></div>
+
+<div class="secundarios">
+
+<div class="secun">
+<div class="imagen11"><div class="centrado"><img src="../archivos/iconosev/calendario.svg" width="30%" style="margin-left: 35%;"></div></div>
+<div class="texto11"><div class="centrado">Este es el titulo muy largo del evento de hoy, max 50 letras.</div></div>
+<div class="imagen22"><div class="centrado"><img src="../archivos/iconosev/rel.svg" width="30%" style="margin-left: 35%;"></div></div>
+<div class="texto22"><div class="centrado">Sabado, 11 Nov 2020 a las 14:00h.</div></div>
+</div>
+
+<div class="secun">
+<div class="aviso"><div class="centrado">No hay mas eventos que mostrar</div></div>
+
+
+
+</div>
+
+<div class="secun">
+
+
+
+
+</div>
+
+
+<div class="secun">
+
+
+
+
+</div>
+
+</div>
+</div>
+</body>
+</html>

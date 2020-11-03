@@ -1,7 +1,7 @@
 $(window).on("load", function () {
 var lat = 39.036;
 var lon = -2.992;
-var key = "0a4cd51d5182e09f19dc0824d5cbbc44";
+var key = "Your openweathermap key";
  $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lat="+lat+"&lon="+lon+"&appid="+key+"&exclude=minutely,alerts&units=metric", getForecast);
 });
 
